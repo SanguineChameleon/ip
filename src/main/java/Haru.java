@@ -30,6 +30,7 @@ public class Haru {
             case "add" -> new AddTask();
             case "list" -> new ListTasks();
             case "mark" -> new MarkTask();
+            case "unmark" -> new UnmarkTask();
             default -> null;
         };
         command.parse(tokens);
