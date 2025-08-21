@@ -1,10 +1,16 @@
+import java.util.ArrayList;
 import java.util.stream.Stream;
 
 public class Haru {
     private static boolean isRunning = true;
+    private static final ArrayList<Task> tasks = new ArrayList<>();
 
     public static void stop() {
         Haru.isRunning = false;
+    }
+
+    public static ArrayList<Task> getTasks() {
+        return Haru.tasks;
     }
 
     private static void parse(String str) {
