@@ -22,6 +22,7 @@ public class Haru {
         Command command = switch (name) {
             case "bye" -> new Goodbye();
             case "add" -> new AddTask();
+            case "list" -> new ListTasks();
             default -> null;
         };
         command.parse(tokens);
