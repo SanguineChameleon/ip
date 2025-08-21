@@ -13,7 +13,7 @@ public class Haru {
         return Haru.tasks;
     }
 
-    private static void parse(String str) {
+    private static void runCommand(String str) {
         String[] tokens = Stream.of(str.split(" "))
                 .filter(t -> !t.isEmpty())
                 .toArray(String[]::new);
@@ -33,7 +33,7 @@ public class Haru {
     public static void main(String[] args) {
         new Hello().execute();
         while (Haru.isRunning) {
-            Haru.parse(System.console().readLine());
+            Haru.runCommand(System.console().readLine());
         }
     }
 }
