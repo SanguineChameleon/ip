@@ -8,7 +8,6 @@ public class Haru {
     }
 
     private static void parse(String str) {
-        System.out.println("You typed: " + str);
         String[] tokens = Stream.of(str.split(" "))
                 .filter(t -> !t.isEmpty())
                 .toArray(String[]::new);
