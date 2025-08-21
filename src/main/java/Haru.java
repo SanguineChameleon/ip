@@ -23,6 +23,7 @@ public class Haru {
             case "bye" -> new Goodbye();
             case "add" -> new AddTask();
             case "list" -> new ListTasks();
+            case "mark" -> new MarkTask();
             default -> null;
         };
         command.parse(tokens);
