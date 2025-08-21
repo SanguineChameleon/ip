@@ -13,6 +13,12 @@ public class Haru {
         return Haru.tasks;
     }
 
+    public static int parseTaskId(String str) {
+        // TODO: throw if invalid
+        int id = Integer.parseInt(str);
+        return id - 1;
+    }
+
     private static void runCommand(String str) {
         String[] tokens = Stream.of(str.split(" "))
                 .filter(t -> !t.isEmpty())
