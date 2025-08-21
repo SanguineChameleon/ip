@@ -13,9 +13,13 @@ public class Haru {
                 .filter(t -> !t.isEmpty())
                 .toArray(String[]::new);
         // TODO: tokens can be empty
-        if (tokens[0].equals("bye")) {
-            new Goodbye().execute();
-        }
+        String name = tokens[0];
+        Command command = switch (name) {
+            case "bye" -> new Goodbye();
+            default -> null;
+        };
+        command.parse(tokens);
+        command.execute();
     }
 
     public static void main(String[] args) {
