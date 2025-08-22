@@ -15,6 +15,15 @@ public abstract class Command {
         return this.options.get(name);
     }
 
+    public String getRequiredOption(String name) throws HaruException {
+        String value = this.options.get(name);
+        if (value.isEmpty()) {
+            String alias = this.aliases.get(name);
+            throw new EmptyArgumentException(alias);
+        }
+        return value;
+    }
+
     public void parse(String[] tokens) {
         StringBuilder sb = new StringBuilder();
         String name = "primary";
