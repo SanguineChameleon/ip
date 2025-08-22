@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public abstract class AddTask extends Command {
-    public AddTask(String[] names) {
-        super(names);
+    public AddTask(HashMap<String, String> aliases) {
+        super(aliases);
     }
 
     public void add(Task task) {
