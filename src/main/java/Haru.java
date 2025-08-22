@@ -19,7 +19,7 @@ public class Haru {
         return id - 1;
     }
 
-    private static void runCommand(String str) {
+    private static void runCommand(String str) throws HaruException {
         String[] tokens = Stream.of(str.split(" "))
                 .filter(t -> !t.isEmpty())
                 .toArray(String[]::new);
@@ -42,7 +42,13 @@ public class Haru {
     public static void main(String[] args) {
         new Hello().execute();
         while (Haru.isRunning) {
-            Haru.runCommand(System.console().readLine());
+            try {
+                Haru.runCommand(System.console().readLine());
+            }
+            catch (HaruException e) {
+                System.out.println(e.getMessage());
+                System.out.println("It's okay, you can try again~!");
+            }
         }
     }
 }
