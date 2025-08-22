@@ -28,6 +28,7 @@ public class Haru {
         Command command = switch (name) {
             case "bye" -> new Goodbye();
             case "todo" -> new AddToDo();
+            case "deadline" -> new AddDeadline();
             case "list" -> new ListTasks();
             case "mark" -> new MarkTask();
             case "unmark" -> new UnmarkTask();
