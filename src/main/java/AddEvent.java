@@ -1,14 +1,21 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class AddEvent extends AddTask {
     public AddEvent() {
-        super(new String[]{"by"});
+        super(new HashMap<>(Map.of(
+                "primary", "event name",
+                "from", "start time",
+                "to", "end time"
+        )));
     }
 
     @Override
-    public void execute() {
+    public void execute() throws HaruException {
         // TODO: name, from, and to can be empty
-        String name = super.getOption("primary");
-        String from = super.getOption("from");
-        String to = super.getOption("to");
+        String name = super.getRequiredOption("primary");
+        String from = super.getRequiredOption("from");
+        String to = super.getRequiredOption("to");
         add(new Event(name, from, to));
     }
 }
