@@ -15,10 +15,6 @@ public abstract class Command {
         }
     }
 
-    public String getOption(String name) {
-        return this.options.get(name);
-    }
-
     public String getRequiredOption(String name) throws HaruException {
         String value = this.options.get(name);
         if (value.isEmpty()) {
