@@ -40,4 +40,13 @@ mark -100
 mark 100
 unmark -100
 unmark 100
+delete 8
+delete -100
+delete 100
+list
+delete 2
+list
+delete 2
+list
+delete 5
 bye

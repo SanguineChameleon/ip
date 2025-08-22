@@ -101,4 +101,37 @@ Eh?! The task ID must be a number between 1 and 8!
 It's okay, you can try again~!
 Eh?! The task ID must be a number between 1 and 8!
 It's okay, you can try again~!
+Okay~! I will delete this task:
+[E][ ] project meeting (from Aug 6th 2pm to 4pm)
+Eh?! The task ID must be a number between 1 and 7!
+It's okay, you can try again~!
+Eh?! The task ID must be a number between 1 and 7!
+It's okay, you can try again~!
+Okay~! Here are all the tasks in your list:
+1. [T][X] read book
+2. [D][ ] return book (by June 6th)
+3. [E][ ] project meeting (from Aug 6th 2pm to 4pm)
+4. [T][X] join sports club
+5. [T][ ] borrow book
+6. [D][ ] do homework (by N/A)
+7. [T][ ] buy bread
+Okay~! I will delete this task:
+[D][ ] return book (by June 6th)
+Okay~! Here are all the tasks in your list:
+1. [T][X] read book
+2. [E][ ] project meeting (from Aug 6th 2pm to 4pm)
+3. [T][X] join sports club
+4. [T][ ] borrow book
+5. [D][ ] do homework (by N/A)
+6. [T][ ] buy bread
+Okay~! I will delete this task:
+[E][ ] project meeting (from Aug 6th 2pm to 4pm)
+Okay~! Here are all the tasks in your list:
+1. [T][X] read book
+2. [T][X] join sports club
+3. [T][ ] borrow book
+4. [D][ ] do homework (by N/A)
+5. [T][ ] buy bread
+Okay~! I will delete this task:
+[T][ ] buy bread
 See you next time! Bye-bye~!
