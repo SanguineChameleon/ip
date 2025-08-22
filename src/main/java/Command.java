@@ -28,7 +28,7 @@ public abstract class Command {
         return value;
     }
 
-    public void parse(String[] tokens) {
+    public void parse(String[] tokens) throws HaruException {
         StringBuilder sb = new StringBuilder();
         String name = "primary";
         for (int i = 1; i < tokens.length; i++) {
@@ -36,7 +36,9 @@ public abstract class Command {
             if (token.charAt(0) == '/') {
                 this.options.put(name, sb.toString());
                 name = token.substring(1);
-                // TODO: check if name is invalid
+                if (!this.options.containsKey(name)) {
+                    throw new UnknownOptionException(name);
+                }
                 sb = new StringBuilder();
                 continue;
             }
