@@ -35,7 +35,7 @@ public class Haru {
             case "list" -> new ListTasks();
             case "mark" -> new MarkTask();
             case "unmark" -> new UnmarkTask();
-            default -> null;
+            default -> throw new UnknownCommandException();
         };
         command.parse(tokens);
         command.execute();
