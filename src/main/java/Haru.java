@@ -29,6 +29,7 @@ public class Haru {
             case "bye" -> new Goodbye();
             case "todo" -> new AddToDo();
             case "deadline" -> new AddDeadline();
+            case "event" -> new AddEvent();
             case "list" -> new ListTasks();
             case "mark" -> new MarkTask();
             case "unmark" -> new UnmarkTask();
