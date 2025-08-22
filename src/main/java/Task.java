@@ -16,8 +16,12 @@ public abstract class Task {
         this.isDone = false;
     }
 
-    public String getDescription() {
+    public String getName() {
         return this.name;
+    }
+
+    public String getDescription() {
+        return this.getName();
     }
 
     @Override
