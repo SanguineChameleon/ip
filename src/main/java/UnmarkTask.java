@@ -1,6 +1,8 @@
+import java.util.HashMap;
+
 public class UnmarkTask extends Command {
     public UnmarkTask() {
-        super(new String[]{});
+        super(new HashMap<>());
     }
 
     @Override
