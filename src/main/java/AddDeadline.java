@@ -1,13 +1,18 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class AddDeadline extends AddTask {
     public AddDeadline() {
-        super(new String[]{"by"});
+        super(new HashMap<>(Map.of(
+                "primary", "task name",
+                "by", "deadline"
+        )));
     }
 
     @Override
-    public void execute() {
-        // TODO: task name can be empty, by can by empty
-        String name = super.getOption("primary");
-        String by = super.getOption("by");
+    public void execute() throws HaruException {
+        String name = super.getRequiredOption("primary");
+        String by = super.getRequiredOption("by");
         add(new Deadline(name, by));
     }
 }
