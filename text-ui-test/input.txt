@@ -1,3 +1,5 @@
+mark blah
+unmark blah
 todo read book
 deadline return book /by June 6th
 list
@@ -15,4 +17,27 @@ list
    todo    buy     bread
         mark 7
        unmark 7
+
+blah blah blah
+todo
+deadline /by June 6th
+deadline return book
+deadline return book /by
+event /from Aug 6th 2pm /to 4pm
+event project meeting /from /to 4pm
+event project meeting /from Aug 6th 2pm /to
+event project meeting /to 4pm /from Aug 6th 2pm
+deadline return book /from June 5th /by June 6th
+list /list
+bye /bye
+list
+mark blah
+mark 1 2 3
+mark 0
+mark 9
+mark -1
+mark -100
+mark 100
+unmark -100
+unmark 100
 bye

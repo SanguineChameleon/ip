@@ -1,4 +1,8 @@
 Hi~! I'm Haru. What can I do for you today?
+Eh?! The list is currently empty!
+It's okay, you can try again~!
+Eh?! The list is currently empty!
+It's okay, you can try again~!
 Okay~! I will add this task to your list:
 [T][ ] read book
 Okay~! I will add this task to your list:
@@ -44,4 +48,57 @@ Okay~! I will mark this task as done:
 [T][X] buy bread
 Okay~! I will unmark this task as not done:
 [T][ ] buy bread
-See you next time! Bye-bye~
+Eh?! You should give me a command!
+It's okay, you can try again~!
+Eh?! I don't recognize that command!
+It's okay, you can try again~!
+Eh?! The task name cannot be empty!
+It's okay, you can try again~!
+Eh?! The task name cannot be empty!
+It's okay, you can try again~!
+Eh?! The deadline cannot be empty!
+It's okay, you can try again~!
+Eh?! The deadline cannot be empty!
+It's okay, you can try again~!
+Eh?! The event name cannot be empty!
+It's okay, you can try again~!
+Eh?! The start time cannot be empty!
+It's okay, you can try again~!
+Eh?! The end time cannot be empty!
+It's okay, you can try again~!
+Okay~! I will add this task to your list:
+[E][ ] project meeting (from Aug 6th 2pm to 4pm)
+Eh?! I don't recognize the /from option!
+It's okay, you can try again~!
+Eh?! I don't recognize the /list option!
+It's okay, you can try again~!
+Eh?! I don't recognize the /bye option!
+It's okay, you can try again~!
+Okay~! Here are all the tasks in your list:
+1. [T][X] read book
+2. [D][ ] return book (by June 6th)
+3. [E][ ] project meeting (from Aug 6th 2pm to 4pm)
+4. [T][X] join sports club
+5. [T][ ] borrow book
+6. [D][ ] do homework (by N/A)
+7. [T][ ] buy bread
+8. [E][ ] project meeting (from Aug 6th 2pm to 4pm)
+Eh?! The task ID must be a number between 1 and 8!
+It's okay, you can try again~!
+Eh?! The task ID must be a number between 1 and 8!
+It's okay, you can try again~!
+Eh?! The task ID must be a number between 1 and 8!
+It's okay, you can try again~!
+Eh?! The task ID must be a number between 1 and 8!
+It's okay, you can try again~!
+Eh?! The task ID must be a number between 1 and 8!
+It's okay, you can try again~!
+Eh?! The task ID must be a number between 1 and 8!
+It's okay, you can try again~!
+Eh?! The task ID must be a number between 1 and 8!
+It's okay, you can try again~!
+Eh?! The task ID must be a number between 1 and 8!
+It's okay, you can try again~!
+Eh?! The task ID must be a number between 1 and 8!
+It's okay, you can try again~!
+See you next time! Bye-bye~!
