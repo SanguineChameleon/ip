@@ -27,7 +27,7 @@ public class Haru {
         String name = tokens[0];
         Command command = switch (name) {
             case "bye" -> new Goodbye();
-            case "add" -> new AddTask();
+            case "todo" -> new AddToDo();
             case "list" -> new ListTasks();
             case "mark" -> new MarkTask();
             case "unmark" -> new UnmarkTask();
