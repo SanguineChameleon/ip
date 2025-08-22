@@ -1,6 +1,8 @@
+import java.util.HashMap;
+
 public class Goodbye extends Command {
     public Goodbye() {
-        super(new String[]{});
+        super(new HashMap<>());
     }
 
     @Override
