@@ -8,6 +8,6 @@ public class Deadline extends Task {
 
     @Override
     public String getDescription() {
-        return String.format("%s (by: %s)", this.getName(), this.by);
+        return String.format("%s (by %s)", this.getName(), this.by);
     }
 }
