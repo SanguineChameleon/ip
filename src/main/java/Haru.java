@@ -23,7 +23,9 @@ public class Haru {
         String[] tokens = Stream.of(str.split(" "))
                 .filter(t -> !t.isEmpty())
                 .toArray(String[]::new);
-        // TODO: tokens can be empty
+        if (tokens.length == 0) {
+            throw new EmptyCommandException();
+        }
         String name = tokens[0];
         Command command = switch (name) {
             case "bye" -> new Goodbye();
