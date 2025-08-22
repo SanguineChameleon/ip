@@ -22,7 +22,7 @@ public abstract class Task {
 
     @Override
     public String toString() {
-        return String.format("[%c] [%c] %s",
+        return String.format("[%c][%c] %s",
                 this.type,
                 (this.isDone ? 'X' : ' '),
                 this.getDescription());
