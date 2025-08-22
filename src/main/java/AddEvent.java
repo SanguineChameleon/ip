@@ -12,7 +12,6 @@ public class AddEvent extends AddTask {
 
     @Override
     public void execute() throws HaruException {
-        // TODO: name, from, and to can be empty
         String name = super.getRequiredOption("primary");
         String from = super.getRequiredOption("from");
         String to = super.getRequiredOption("to");
