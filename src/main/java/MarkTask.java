@@ -1,6 +1,8 @@
+import java.util.HashMap;
+
 public class MarkTask extends Command {
     public MarkTask() {
-        super(new String[]{});
+        super(new HashMap<>());
     }
 
     @Override
