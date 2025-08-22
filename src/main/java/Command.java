@@ -48,5 +48,5 @@ public abstract class Command {
         this.options.put(name, sb.toString());
     }
 
-    public abstract void execute();
+    public abstract void execute() throws HaruException;
 }
