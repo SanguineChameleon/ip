@@ -13,10 +13,20 @@ public class Haru {
         return Haru.tasks;
     }
 
-    public static int parseTaskId(String str) {
-        // TODO: throw if invalid
-        int id = Integer.parseInt(str);
-        return id - 1;
+    public static int parseTaskId(String str) throws HaruException {
+        int length = Haru.tasks.size();
+        try {
+            int id = Integer.parseInt(str);
+            if (1 <= id && id <= length) {
+                return id - 1;
+            }
+            else {
+                throw new InvalidTaskIdException(length);
+            }
+        }
+        catch (NumberFormatException e) {
+            throw new InvalidTaskIdException(length);
+        }
     }
 
     private static void runCommand(String str) throws HaruException {
