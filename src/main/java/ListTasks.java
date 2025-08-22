@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ListTasks extends Command {
     public ListTasks() {
-        super(new String[]{});
+        super(new HashMap<>());
     }
 
     @Override
