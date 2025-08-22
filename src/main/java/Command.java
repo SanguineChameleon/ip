@@ -1,10 +1,9 @@
 import java.util.HashMap;
 
 public abstract class Command {
-    private HashMap<String, String> options;
+    private final HashMap<String, String> options = new HashMap<>();
 
     public Command(String[] names) {
-        this.options = new HashMap<>();
         for (String name: names) {
             this.options.put(name, "");
         }
