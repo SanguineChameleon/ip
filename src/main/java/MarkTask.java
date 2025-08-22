@@ -1,13 +1,14 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class MarkTask extends Command {
     public MarkTask() {
-        super(new HashMap<>());
+        super(new HashMap<>(Map.of("primary", "task number")));
     }
 
     @Override
-    public void execute() {
-        int id = Haru.parseTaskId(this.getOption("primary"));
+    public void execute() throws HaruException {
+        int id = Haru.parseTaskId(this.getRequiredOption("primary"));
         Task task = Haru.getTasks().get(id);
         task.mark();
         System.out.println("Okay~! I will mark this task as done:");
