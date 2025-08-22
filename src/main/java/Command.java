@@ -2,9 +2,11 @@ import java.util.HashMap;
 
 public abstract class Command {
     private final HashMap<String, String> options = new HashMap<>();
+    private final HashMap<String, String> aliases;
 
-    public Command(String[] names) {
-        for (String name: names) {
+    public Command(HashMap<String, String> aliases) {
+        this.aliases = new HashMap<>(aliases);
+        for (String name: aliases.keySet()) {
             this.options.put(name, "");
         }
     }
