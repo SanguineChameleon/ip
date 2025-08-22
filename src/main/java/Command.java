@@ -9,6 +9,10 @@ public abstract class Command {
         for (String name: aliases.keySet()) {
             this.options.put(name, "");
         }
+        if (!aliases.containsKey("primary")) {
+            this.aliases.put("primary", "main value");
+            this.options.put("primary", "");
+        }
     }
 
     public String getOption(String name) {
