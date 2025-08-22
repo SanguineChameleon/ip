@@ -1,9 +1,11 @@
 public abstract class Task {
     private final String name;
+    private final char type;
     private boolean isDone = false;
 
-    public Task(String name) {
+    public Task(String name, char type) {
         this.name = name;
+        this.type = type;
     }
 
     public void mark() {
@@ -20,7 +22,8 @@ public abstract class Task {
 
     @Override
     public String toString() {
-        return String.format("[%c] %s",
+        return String.format("[%c] [%c] %s",
+                this.type,
                 (this.isDone ? 'X' : ' '),
                 this.getDescription());
     }
