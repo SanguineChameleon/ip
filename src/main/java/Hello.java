@@ -1,6 +1,8 @@
+import java.util.HashMap;
+
 public class Hello extends Command {
     public Hello() {
-        super(new String[]{});
+        super(new HashMap<>());
     }
 
     @Override
