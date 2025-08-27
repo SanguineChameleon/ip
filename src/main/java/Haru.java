@@ -64,8 +64,13 @@ public class Haru {
             try {
                 Haru.runCommand(System.console().readLine());
             }
-            catch (HaruException e) {
-                System.out.println(e.getMessage());
+            catch (HaruException | IOException e) {
+                if (e instanceof HaruException) {
+                    System.out.println(e.getMessage());
+                }
+                else {
+                    System.out.println("Eh?! Something went wrong with reading/saving your file!");
+                }
                 System.out.println("It's okay, you can try again~!");
             }
         }
