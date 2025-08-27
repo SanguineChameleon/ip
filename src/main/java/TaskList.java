@@ -43,4 +43,9 @@ public class TaskList implements Serializable {
     public Task get(int index) {
         return this.tasks.get(index);
     }
+
+    public void remove(int index) throws IOException {
+        this.tasks.remove(index);
+        this.writeToFile();
+    }
 }
