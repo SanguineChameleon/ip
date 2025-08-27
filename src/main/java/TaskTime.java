@@ -24,7 +24,7 @@ public class TaskTime {
             } catch (DateTimeParseException _) {
             }
         }
-        // todo: throw exception
+        throw new InvalidTimeException(alias);
     }
 
     @Override
