@@ -31,6 +31,12 @@ public abstract class Command {
         return value;
     }
 
+    public TaskTime getRequiredTime(String name) throws HaruException {
+        String strTime = getRequiredOption(name);
+        String alias = this.aliases.get(name);
+        return new TaskTime(alias, strTime);
+    }
+
     public String getAlias(String name) {
         return this.aliases.get(name);
     }
