@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.stream.Stream;
 
 public class Haru {
@@ -17,12 +16,10 @@ public class Haru {
             int id = Integer.parseInt(str);
             if (1 <= id && id <= length) {
                 return id - 1;
-            }
-            else {
+            } else {
                 throw new InvalidTaskIdException(length);
             }
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new InvalidTaskIdException(length);
         }
     }
@@ -54,8 +51,7 @@ public class Haru {
         TaskList taskList;
         try {
             taskList = TaskList.fromFile(TASK_FILE_PATH);
-        }
-        catch (IOException | ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             taskList = TaskList.empty(TASK_FILE_PATH);
         }
         Haru.ctx = new CommandContext(taskList);
@@ -63,12 +59,10 @@ public class Haru {
         while (Haru.isRunning) {
             try {
                 Haru.runCommand(System.console().readLine());
-            }
-            catch (HaruException | IOException e) {
+            } catch (HaruException | IOException e) {
                 if (e instanceof HaruException) {
                     System.out.println(e.getMessage());
-                }
-                else {
+                } else {
                     System.out.println("Eh?! Something went wrong with reading/saving your file!");
                 }
                 System.out.println("It's okay, you can try again~!");
