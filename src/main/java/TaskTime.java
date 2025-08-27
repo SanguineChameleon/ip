@@ -1,10 +1,11 @@
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Locale;
 
-public class TaskTime {
+public class TaskTime implements Serializable {
     private static final List<DateTimeFormatter> FORMATS = List.of(
             DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm", Locale.ENGLISH),
             DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"),
