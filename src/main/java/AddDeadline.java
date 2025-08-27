@@ -2,11 +2,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AddDeadline extends AddTask {
-    public AddDeadline() {
+    public AddDeadline(CommandContext ctx) {
         super(new HashMap<>(Map.of(
                 "primary", "task name",
                 "by", "deadline"
-        )));
+        )), ctx);
     }
 
     @Override
