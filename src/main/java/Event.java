@@ -1,8 +1,8 @@
 public class Event extends Task {
-    private final String from;
-    private final String to;
+    private final TaskTime from;
+    private final TaskTime to;
 
-    public Event(String name, String from, String to) {
+    public Event(String name, TaskTime from, TaskTime to) {
         super(name, TaskType.EVENT);
         this.from = from;
         this.to = to;
