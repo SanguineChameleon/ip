@@ -9,8 +9,9 @@ public class DeleteTask extends Command {
 
     @Override
     public void execute() throws HaruException, IOException {
-        int id = Haru.parseTaskId(this.getRequiredOption("primary"));
-        Task task = this.getTaskList().remove(id);
+        TaskList taskList = this.getTaskList();
+        int id = taskList.parseTaskId(this.getRequiredOption("primary"));
+        Task task = taskList.remove(id);
         System.out.println("Okay~! I will delete this task:");
         System.out.println(task);
     }
