@@ -39,4 +39,8 @@ public class TaskList implements Serializable {
         this.tasks.add(task);
         this.writeToFile();
     }
+
+    public Task get(int index) {
+        return this.tasks.get(index);
+    }
 }
