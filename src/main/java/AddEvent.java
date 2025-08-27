@@ -14,8 +14,8 @@ public class AddEvent extends AddTask {
     @Override
     public void execute() throws HaruException, IOException {
         String name = super.getRequiredOption("primary");
-        String from = super.getRequiredOption("from");
-        String to = super.getRequiredOption("to");
+        TaskTime from = super.getRequiredTime("from");
+        TaskTime to = super.getRequiredTime("to");
         add(new Event(name, from, to));
     }
 }
