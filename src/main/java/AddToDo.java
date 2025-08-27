@@ -2,8 +2,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AddToDo extends AddTask {
-    public AddToDo() {
-        super(new HashMap<>(Map.of("primary", "task name")));
+    public AddToDo(CommandContext ctx) {
+        super(new HashMap<>(Map.of("primary", "task name")), ctx);
     }
 
     @Override
