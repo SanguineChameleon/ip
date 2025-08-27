@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +12,7 @@ public class AddEvent extends AddTask {
     }
 
     @Override
-    public void execute() throws HaruException {
+    public void execute() throws HaruException, IOException {
         String name = super.getRequiredOption("primary");
         String from = super.getRequiredOption("from");
         String to = super.getRequiredOption("to");
