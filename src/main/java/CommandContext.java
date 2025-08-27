@@ -4,4 +4,8 @@ public class CommandContext {
     public CommandContext(TaskList taskList) {
         this.taskList = taskList;
     }
+
+    public TaskList getTaskList() {
+        return this.taskList;
+    }
 }
