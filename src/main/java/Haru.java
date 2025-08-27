@@ -11,10 +11,6 @@ public class Haru {
         Haru.isRunning = false;
     }
 
-    public static ArrayList<Task> getTasks() {
-        return Haru.ctx.getTaskList().getTasks();
-    }
-
     public static int parseTaskId(String str) throws HaruException {
         int length = Haru.ctx.getTaskList().getTasks().size();
         try {
