@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.HashMap;
 
 public abstract class Command {
@@ -52,5 +53,5 @@ public abstract class Command {
         this.options.put(name, sb.toString());
     }
 
-    public abstract void execute() throws HaruException;
+    public abstract void execute() throws HaruException, IOException;
 }
