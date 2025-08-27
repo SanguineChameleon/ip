@@ -34,4 +34,9 @@ public class TaskList implements Serializable {
     public ArrayList<Task> getTasks() {
         return this.tasks;
     }
+
+    public void add(Task task) throws IOException {
+        this.tasks.add(task);
+        this.writeToFile();
+    }
 }
