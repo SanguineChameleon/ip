@@ -29,4 +29,9 @@ public class TaskList implements Serializable {
             out.writeObject(this);
         }
     }
+
+    // todo: replace this, better to get and set elements
+    public ArrayList<Task> getTasks() {
+        return this.tasks;
+    }
 }
