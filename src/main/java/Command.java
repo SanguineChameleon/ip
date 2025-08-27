@@ -37,10 +37,6 @@ public abstract class Command {
         return new TaskTime(alias, strTime);
     }
 
-    public String getAlias(String name) {
-        return this.aliases.get(name);
-    }
-
     public void parse(String[] tokens) throws HaruException {
         StringBuilder sb = new StringBuilder();
         String name = "primary";
