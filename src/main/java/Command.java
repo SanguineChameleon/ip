@@ -3,8 +3,9 @@ import java.util.HashMap;
 public abstract class Command {
     private final HashMap<String, String> options = new HashMap<>();
     private final HashMap<String, String> aliases;
+    private final TaskList taskList;
 
-    public Command(HashMap<String, String> aliases) {
+    public Command(HashMap<String, String> aliases, TaskList taskList) {
         this.aliases = new HashMap<>(aliases);
         for (String name: aliases.keySet()) {
             this.options.put(name, "");
@@ -13,6 +14,7 @@ public abstract class Command {
             this.aliases.put("primary", "main value");
             this.options.put("primary", "");
         }
+        this.taskList = taskList;
     }
 
     public String getRequiredOption(String name) throws HaruException {
