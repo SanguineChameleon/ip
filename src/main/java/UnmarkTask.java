@@ -2,8 +2,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UnmarkTask extends Command {
-    public UnmarkTask() {
-        super(new HashMap<>(Map.of("primary", "task number")));
+    public UnmarkTask(CommandContext ctx) {
+        super(new HashMap<>(Map.of("primary", "task number")), ctx);
     }
 
     @Override
