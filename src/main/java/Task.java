@@ -1,4 +1,6 @@
-public abstract class Task {
+import java.io.Serializable;
+
+public abstract class Task implements Serializable {
     private final String name;
     private final TaskType type;
     private boolean isDone = false;
