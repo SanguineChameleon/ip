@@ -1,10 +1,12 @@
+import java.io.IOException;
 import java.util.HashMap;
 
 public abstract class Command {
     private final HashMap<String, String> options = new HashMap<>();
     private final HashMap<String, String> aliases;
+    private final CommandContext ctx;
 
-    public Command(HashMap<String, String> aliases) {
+    public Command(HashMap<String, String> aliases, CommandContext ctx) {
         this.aliases = new HashMap<>(aliases);
         for (String name: aliases.keySet()) {
             this.options.put(name, "");
@@ -13,6 +15,11 @@ public abstract class Command {
             this.aliases.put("primary", "main value");
             this.options.put("primary", "");
         }
+        this.ctx = ctx;
+    }
+
+    public TaskList getTaskList() {
+        return this.ctx.getTaskList();
     }
 
     public String getRequiredOption(String name) throws HaruException {
@@ -46,5 +53,5 @@ public abstract class Command {
         this.options.put(name, sb.toString());
     }
 
-    public abstract void execute() throws HaruException;
+    public abstract void execute() throws HaruException, IOException;
 }
