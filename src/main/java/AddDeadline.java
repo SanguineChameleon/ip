@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,7 +11,7 @@ public class AddDeadline extends AddTask {
     }
 
     @Override
-    public void execute() throws HaruException {
+    public void execute() throws HaruException, IOException {
         String name = super.getRequiredOption("primary");
         String by = super.getRequiredOption("by");
         add(new Deadline(name, by));
