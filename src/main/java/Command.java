@@ -8,7 +8,7 @@ public abstract class Command {
 
     public Command(HashMap<String, String> aliases, CommandContext ctx) {
         this.aliases = new HashMap<>(aliases);
-        for (String name: aliases.keySet()) {
+        for (String name : aliases.keySet()) {
             this.options.put(name, "");
         }
         if (!aliases.containsKey("primary")) {
@@ -29,6 +29,10 @@ public abstract class Command {
             throw new EmptyArgumentException(alias);
         }
         return value;
+    }
+
+    public String getAlias(String name) {
+        return this.aliases.get(name);
     }
 
     public void parse(String[] tokens) throws HaruException {
