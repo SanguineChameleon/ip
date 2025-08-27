@@ -58,4 +58,16 @@ public class TaskList implements Serializable {
         this.writeToFile();
         return task;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < tasks.size(); i++) {
+            if (i > 0) {
+                sb.append('\n');
+            }
+            sb.append(i + 1).append(". ").append(tasks.get(i));
+        }
+        return sb.toString();
+    }
 }
