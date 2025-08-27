@@ -40,14 +40,14 @@ public class Haru {
         }
         String name = tokens[0];
         Command command = switch (name) {
-            case "bye" -> new Goodbye();
-            case "todo" -> new AddToDo();
-            case "deadline" -> new AddDeadline();
-            case "event" -> new AddEvent();
-            case "list" -> new ListTasks();
-            case "mark" -> new MarkTask();
-            case "unmark" -> new UnmarkTask();
-            case "delete" -> new DeleteTask();
+            case "bye" -> new Goodbye(Haru.ctx);
+            case "todo" -> new AddToDo(Haru.ctx);
+            case "deadline" -> new AddDeadline(Haru.ctx);
+            case "event" -> new AddEvent(Haru.ctx);
+            case "list" -> new ListTasks(Haru.ctx);
+            case "mark" -> new MarkTask(Haru.ctx);
+            case "unmark" -> new UnmarkTask(Haru.ctx);
+            case "delete" -> new DeleteTask(Haru.ctx);
             default -> throw new UnknownCommandException();
         };
         command.parse(tokens);
@@ -63,7 +63,7 @@ public class Haru {
             taskList = TaskList.empty(TASK_FILE_PATH);
         }
         Haru.ctx = new CommandContext(taskList);
-        new Hello().execute();
+        new Hello(Haru.ctx).execute();
         while (Haru.isRunning) {
             try {
                 Haru.runCommand(System.console().readLine());
