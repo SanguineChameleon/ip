@@ -1,20 +1,22 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 
 public class Haru {
+    private static final String TASK_FILE_PATH = "tasks.ser";
     private static boolean isRunning = true;
-    private static final ArrayList<Task> tasks = new ArrayList<>();
+    private static TaskList taskList;
 
     public static void stop() {
         Haru.isRunning = false;
     }
 
     public static ArrayList<Task> getTasks() {
-        return Haru.tasks;
+        return Haru.taskList.getTasks();
     }
 
     public static int parseTaskId(String str) throws HaruException {
-        int length = Haru.tasks.size();
+        int length = Haru.taskList.getTasks().size();
         try {
             int id = Integer.parseInt(str);
             if (1 <= id && id <= length) {
@@ -53,6 +55,12 @@ public class Haru {
     }
 
     public static void main(String[] args) {
+        try {
+            Haru.taskList = TaskList.fromFile(TASK_FILE_PATH);
+        }
+        catch (IOException | ClassNotFoundException e) {
+            Haru.taskList = TaskList.empty(TASK_FILE_PATH);
+        }
         new Hello().execute();
         while (Haru.isRunning) {
             try {
