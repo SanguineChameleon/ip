@@ -40,10 +40,6 @@ public class TaskList implements Serializable {
         this.writeToFile();
     }
 
-    public Task get(int index) {
-        return this.tasks.get(index);
-    }
-
     public void remove(int index) throws IOException {
         this.tasks.remove(index);
         this.writeToFile();
