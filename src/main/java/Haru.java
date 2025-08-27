@@ -10,20 +10,6 @@ public class Haru {
         Haru.isRunning = false;
     }
 
-    public static int parseTaskId(String str) throws HaruException {
-        int length = Haru.ctx.getTaskList().getTasks().size();
-        try {
-            int id = Integer.parseInt(str);
-            if (1 <= id && id <= length) {
-                return id - 1;
-            } else {
-                throw new InvalidTaskIdException(length);
-            }
-        } catch (NumberFormatException e) {
-            throw new InvalidTaskIdException(length);
-        }
-    }
-
     private static void runCommand(String str) throws HaruException, IOException {
         String[] tokens = Stream.of(str.split(" "))
                 .filter(t -> !t.isEmpty())

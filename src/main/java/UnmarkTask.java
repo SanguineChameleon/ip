@@ -9,8 +9,9 @@ public class UnmarkTask extends Command {
 
     @Override
     public void execute() throws HaruException, IOException {
-        int id = Haru.parseTaskId(this.getRequiredOption("primary"));
-        Task task = this.getTaskList().unmark(id);
+        TaskList taskList = this.getTaskList();
+        int id = taskList.parseTaskId(this.getRequiredOption("primary"));
+        Task task = taskList.unmark(id);
         System.out.println("Okay~! I will unmark this task as not done:");
         System.out.println(task);
     }

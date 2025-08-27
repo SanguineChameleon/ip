@@ -30,9 +30,18 @@ public class TaskList implements Serializable {
         }
     }
 
-    // todo: replace this, better to get and set elements
-    public ArrayList<Task> getTasks() {
-        return this.tasks;
+    public int parseTaskId(String str) throws HaruException {
+        int length = this.tasks.size();
+        try {
+            int id = Integer.parseInt(str);
+            if (1 <= id && id <= length) {
+                return id - 1;
+            } else {
+                throw new InvalidTaskIdException(length);
+            }
+        } catch (NumberFormatException e) {
+            throw new InvalidTaskIdException(length);
+        }
     }
 
     public void add(Task task) throws IOException {

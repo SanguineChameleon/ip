@@ -9,8 +9,9 @@ public class MarkTask extends Command {
 
     @Override
     public void execute() throws HaruException, IOException {
-        int id = Haru.parseTaskId(this.getRequiredOption("primary"));
-        Task task = this.getTaskList().mark(id);
+        TaskList taskList = this.getTaskList();
+        int id = taskList.parseTaskId(this.getRequiredOption("primary"));
+        Task task = taskList.mark(id);
         System.out.println("Okay~! I will mark this task as done:");
         System.out.println(task);
     }
