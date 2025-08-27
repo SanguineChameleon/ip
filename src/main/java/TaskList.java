@@ -51,4 +51,11 @@ public class TaskList implements Serializable {
         this.writeToFile();
         return task;
     }
+
+    public Task unmark(int index) throws IOException {
+        Task task = this.tasks.get(index);
+        task.unmark();
+        this.writeToFile();
+        return task;
+    }
 }
