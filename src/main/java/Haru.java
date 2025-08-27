@@ -5,18 +5,18 @@ import java.util.stream.Stream;
 public class Haru {
     private static final String TASK_FILE_PATH = "tasks.ser";
     private static boolean isRunning = true;
-    private static TaskList taskList;
+    private static CommandContext ctx;
 
     public static void stop() {
         Haru.isRunning = false;
     }
 
     public static ArrayList<Task> getTasks() {
-        return Haru.taskList.getTasks();
+        return Haru.ctx.getTaskList().getTasks();
     }
 
     public static int parseTaskId(String str) throws HaruException {
-        int length = Haru.taskList.getTasks().size();
+        int length = Haru.ctx.getTaskList().getTasks().size();
         try {
             int id = Integer.parseInt(str);
             if (1 <= id && id <= length) {
@@ -55,12 +55,14 @@ public class Haru {
     }
 
     public static void main(String[] args) {
+        TaskList taskList;
         try {
-            Haru.taskList = TaskList.fromFile(TASK_FILE_PATH);
+            taskList = TaskList.fromFile(TASK_FILE_PATH);
         }
         catch (IOException | ClassNotFoundException e) {
-            Haru.taskList = TaskList.empty(TASK_FILE_PATH);
+            taskList = TaskList.empty(TASK_FILE_PATH);
         }
+        Haru.ctx = new CommandContext(taskList);
         new Hello().execute();
         while (Haru.isRunning) {
             try {
