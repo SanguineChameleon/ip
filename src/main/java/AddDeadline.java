@@ -13,7 +13,7 @@ public class AddDeadline extends AddTask {
     @Override
     public void execute() throws HaruException, IOException {
         String name = super.getRequiredOption("primary");
-        String by = super.getRequiredOption("by");
+        TaskTime by = super.getRequiredTime("by");
         add(new Deadline(name, by));
     }
 }
