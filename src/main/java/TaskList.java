@@ -23,7 +23,7 @@ public class TaskList implements Serializable {
     }
 
     public void writeToFile()
-        throws IOException {
+            throws IOException {
         try (FileOutputStream fos = new FileOutputStream(this.filePath);
              ObjectOutputStream out = new ObjectOutputStream(fos)) {
             out.writeObject(this);
@@ -40,9 +40,11 @@ public class TaskList implements Serializable {
         this.writeToFile();
     }
 
-    public void remove(int index) throws IOException {
+    public Task remove(int index) throws IOException {
+        Task task = this.tasks.get(index);
         this.tasks.remove(index);
         this.writeToFile();
+        return task;
     }
 
     public Task mark(int index) throws IOException {
