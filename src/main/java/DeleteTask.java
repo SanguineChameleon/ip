@@ -3,8 +3,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DeleteTask extends Command {
-    public DeleteTask() {
-        super(new HashMap<>(Map.of("primary", "task number")));
+    public DeleteTask(CommandContext ctx) {
+        super(new HashMap<>(Map.of("primary", "task number")), ctx);
     }
 
     @Override
