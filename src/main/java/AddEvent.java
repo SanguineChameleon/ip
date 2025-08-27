@@ -2,12 +2,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AddEvent extends AddTask {
-    public AddEvent() {
+    public AddEvent(CommandContext ctx) {
         super(new HashMap<>(Map.of(
                 "primary", "event name",
                 "from", "start time",
                 "to", "end time"
-        )));
+        )), ctx);
     }
 
     @Override
