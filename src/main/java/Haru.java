@@ -27,7 +27,7 @@ public class Haru {
         }
     }
 
-    private static void runCommand(String str) throws HaruException {
+    private static void runCommand(String str) throws HaruException, IOException {
         String[] tokens = Stream.of(str.split(" "))
                 .filter(t -> !t.isEmpty())
                 .toArray(String[]::new);
