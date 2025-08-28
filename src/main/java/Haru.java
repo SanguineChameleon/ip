@@ -5,7 +5,6 @@ public class Haru {
     private static final String TASK_FILE_PATH = "tasks.ser";
     private static boolean isRunning = true;
     private static CommandContext ctx;
-    private static UI ui;
 
     public static void stop() {
         Haru.isRunning = false;
@@ -42,7 +41,7 @@ public class Haru {
             taskList = TaskList.empty(TASK_FILE_PATH);
         }
         Haru.ctx = new CommandContext(taskList);
-        Haru.ui = new UI();
+        UI ui = new UI();
         new Hello(Haru.ctx).execute();
         while (Haru.isRunning) {
             try {
