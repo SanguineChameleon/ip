@@ -12,7 +12,7 @@ public class DeleteTask extends Command {
         TaskList taskList = this.getTaskList();
         int id = taskList.parseTaskId(this.getRequiredOption("primary"));
         Task task = taskList.remove(id);
-        System.out.println("Okay~! I will delete this task:");
-        System.out.println(task);
+        this.getUI().show("Okay~! I will delete this task:");
+        this.getUI().show(task.toString());
     }
 }
