@@ -10,4 +10,8 @@ public class CommandContext {
     public TaskList getTaskList() {
         return this.taskList;
     }
+
+    public UI getUI() {
+        return this.ui;
+    }
 }
