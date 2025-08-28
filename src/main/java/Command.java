@@ -22,6 +22,10 @@ public abstract class Command {
         return this.ctx.getTaskList();
     }
 
+    public UI getUI() {
+        return this.ctx.getUI();
+    }
+
     public String getRequiredOption(String name) throws HaruException {
         String value = this.options.get(name);
         if (value.isEmpty()) {
