@@ -5,6 +5,7 @@ public class Haru {
     private static final String TASK_FILE_PATH = "tasks.ser";
     private static boolean isRunning = true;
     private static CommandContext ctx;
+    private static UI ui;
 
     public static void stop() {
         Haru.isRunning = false;
@@ -41,17 +42,18 @@ public class Haru {
             taskList = TaskList.empty(TASK_FILE_PATH);
         }
         Haru.ctx = new CommandContext(taskList);
+        Haru.ui = new UI();
         new Hello(Haru.ctx).execute();
         while (Haru.isRunning) {
             try {
-                Haru.runCommand(System.console().readLine());
+                Haru.runCommand(ui.readLine());
             } catch (HaruException | IOException e) {
                 if (e instanceof HaruException) {
-                    System.out.println(e.getMessage());
+                    ui.show(e.getMessage());
                 } else {
-                    System.out.println("Eh?! Something went wrong with reading/saving your file!");
+                    ui.show("Eh?! Something went wrong with reading/saving your file!");
                 }
-                System.out.println("It's okay, you can try again~!");
+                ui.show("It's okay, you can try again~!");
             }
         }
     }
