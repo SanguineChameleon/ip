@@ -7,8 +7,8 @@ public abstract class AddTask extends Command {
     }
 
     public void add(Task task) throws IOException {
-        System.out.println("Okay~! I will add this task to your list:");
-        System.out.println(task);
+        this.getUI().show("Okay~! I will add this task to your list:");
+        this.getUI().show(task.toString());
         this.getTaskList().add(task);
     }
 }
