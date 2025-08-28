@@ -7,7 +7,7 @@ public class ListTasks extends Command {
 
     @Override
     public void execute() {
-        System.out.println("Okay~! Here are all the tasks in your list:");
-        System.out.println(this.getTaskList());
+        this.getUI().show("Okay~! Here are all the tasks in your list:");
+        this.getUI().show(this.getTaskList().toString());
     }
 }
