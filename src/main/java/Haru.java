@@ -40,8 +40,8 @@ public class Haru {
         } catch (IOException | ClassNotFoundException e) {
             taskList = TaskList.empty(TASK_FILE_PATH);
         }
-        Haru.ctx = new CommandContext(taskList);
         UI ui = new UI();
+        Haru.ctx = new CommandContext(taskList, ui);
         new Hello(Haru.ctx).execute();
         while (Haru.isRunning) {
             try {
