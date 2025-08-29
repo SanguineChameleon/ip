@@ -1,3 +1,5 @@
+package haru.model;
+
 public class Event extends Task {
     private final TaskTime from;
     private final TaskTime to;

@@ -1,3 +1,5 @@
+package haru.model;
+
 import haru.exception.HaruException;
 import haru.exception.InvalidTimeException;
 

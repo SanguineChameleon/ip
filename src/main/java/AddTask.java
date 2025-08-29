@@ -1,3 +1,5 @@
+import haru.model.Task;
+
 import java.io.IOException;
 import java.util.HashMap;
 

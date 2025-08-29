@@ -1,3 +1,5 @@
+package haru.model;
+
 public class Deadline extends Task {
     private final TaskTime by;
 

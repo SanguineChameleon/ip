@@ -1,4 +1,6 @@
 import haru.exception.HaruException;
+import haru.model.Deadline;
+import haru.model.TaskTime;
 
 import java.io.IOException;
 import java.util.HashMap;

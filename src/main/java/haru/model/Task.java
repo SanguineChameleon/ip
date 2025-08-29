@@ -1,3 +1,5 @@
+package haru.model;
+
 import java.io.Serializable;
 
 public abstract class Task implements Serializable {
