@@ -1,3 +1,5 @@
+package haru.ui;
+
 public class UI {
     public String readLine() {
         return System.console().readLine();

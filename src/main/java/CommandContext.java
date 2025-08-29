@@ -1,3 +1,5 @@
+import haru.ui.UI;
+
 public class CommandContext {
     private final TaskList taskList;
     private final UI ui;

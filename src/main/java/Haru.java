@@ -1,6 +1,7 @@
 import haru.exception.EmptyCommandException;
 import haru.exception.HaruException;
 import haru.exception.UnknownCommandException;
+import haru.ui.UI;
 
 import java.io.IOException;
 import java.util.stream.Stream;
