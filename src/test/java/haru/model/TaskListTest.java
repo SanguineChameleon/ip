@@ -1,13 +1,14 @@
 package haru.model;
 
-import haru.exception.HaruException;
-import haru.exception.InvalidTaskIdException;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.Test;
+
+import haru.exception.HaruException;
+import haru.exception.InvalidTaskIdException;
 
 public class TaskListTest {
     @Test

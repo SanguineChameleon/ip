@@ -1,11 +1,11 @@
 package haru.command;
 
-import haru.exception.HaruException;
-import haru.model.ToDo;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import haru.exception.HaruException;
+import haru.model.ToDo;
 
 /**
  * Command to add a todo task.

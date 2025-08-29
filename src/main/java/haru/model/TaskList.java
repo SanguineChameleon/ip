@@ -1,8 +1,5 @@
 package haru.model;
 
-import haru.exception.HaruException;
-import haru.exception.InvalidTaskIdException;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -10,6 +7,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+
+import haru.exception.HaruException;
+import haru.exception.InvalidTaskIdException;
 
 /**
  * Represents a list of tasks with persistence support.
