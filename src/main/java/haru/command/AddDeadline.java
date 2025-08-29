@@ -1,3 +1,5 @@
+package haru.command;
+
 import haru.exception.HaruException;
 import haru.model.Deadline;
 import haru.model.TaskTime;

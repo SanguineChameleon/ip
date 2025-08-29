@@ -1,3 +1,5 @@
+package haru.command;
+
 import haru.model.Task;
 
 import java.io.IOException;

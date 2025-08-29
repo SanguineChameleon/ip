@@ -1,3 +1,5 @@
+package haru.command;
+
 import java.util.HashMap;
 
 public class Goodbye extends Command {

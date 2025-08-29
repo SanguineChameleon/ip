@@ -1,3 +1,5 @@
+package haru.command;
+
 import haru.exception.EmptyArgumentException;
 import haru.exception.HaruException;
 import haru.exception.UnknownOptionException;
