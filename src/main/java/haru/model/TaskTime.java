@@ -10,6 +10,9 @@ import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Represents a task time with parsing and formatting.
+ */
 public class TaskTime implements Serializable {
     private static final List<DateTimeFormatter> FORMATS = List.of(
             DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm", Locale.ENGLISH),
@@ -22,6 +25,12 @@ public class TaskTime implements Serializable {
 
     private LocalDateTime time;
 
+    /**
+     * Constructs a TaskTime by parsing a string with supported formats.
+     * @param alias the argument name
+     * @param strTime the string representation of time
+     * @throws HaruException if parsing fails
+     */
     public TaskTime(String alias, String strTime) throws HaruException {
         for (DateTimeFormatter fmt : FORMATS) {
             try {
@@ -34,6 +43,10 @@ public class TaskTime implements Serializable {
         throw new InvalidTimeException(alias);
     }
 
+    /**
+     * Returns the string representation of the time.
+     * @return the formatted time string
+     */
     @Override
     public String toString() {
         return this.time.format(OUTPUT_FORMAT);
