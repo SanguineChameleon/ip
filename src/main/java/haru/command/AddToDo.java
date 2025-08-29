@@ -14,6 +14,7 @@ public class AddToDo extends AddTask {
 
     /**
      * Constructs an AddToDo command with required options.
+     *
      * @param ctx command context for execution
      */
     public AddToDo(CommandContext ctx) {
@@ -22,8 +23,9 @@ public class AddToDo extends AddTask {
 
     /**
      * Executes the command to add a todo task.
+     *
      * @throws HaruException if task creation fails
-     * @throws IOException if IO error occurs
+     * @throws IOException   if IO error occurs
      */
     @Override
     public void execute() throws HaruException, IOException {

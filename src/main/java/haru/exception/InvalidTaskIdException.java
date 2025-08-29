@@ -7,6 +7,7 @@ public class InvalidTaskIdException extends HaruException {
 
     /**
      * Constructs an InvalidTaskIdException with the list length.
+     *
      * @param length the number of tasks in the list
      */
     public InvalidTaskIdException(int length) {

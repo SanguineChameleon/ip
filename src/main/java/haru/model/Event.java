@@ -9,9 +9,10 @@ public class Event extends Task {
 
     /**
      * Constructs an Event task with name, start time, and end time.
+     *
      * @param name the task name
      * @param from the start time
-     * @param to the end time
+     * @param to   the end time
      */
     public Event(String name, TaskTime from, TaskTime to) {
         super(name, TaskType.EVENT);
@@ -21,6 +22,7 @@ public class Event extends Task {
 
     /**
      * Returns the task description with start and end time.
+     *
      * @return the task description
      */
     @Override

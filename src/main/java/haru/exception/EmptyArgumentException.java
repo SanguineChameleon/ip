@@ -7,6 +7,7 @@ public class EmptyArgumentException extends HaruException {
 
     /**
      * Constructs an EmptyArgumentException with the missing alias.
+     *
      * @param alias the name of the missing argument
      */
     public EmptyArgumentException(String alias) {

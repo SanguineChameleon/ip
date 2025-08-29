@@ -15,6 +15,7 @@ public class MarkTask extends Command {
 
     /**
      * Constructs a MarkTask command with required options.
+     *
      * @param ctx command context for execution
      */
     public MarkTask(CommandContext ctx) {
@@ -23,8 +24,9 @@ public class MarkTask extends Command {
 
     /**
      * Executes the command to mark a task as done.
+     *
      * @throws HaruException if task update fails
-     * @throws IOException if IO error occurs
+     * @throws IOException   if IO error occurs
      */
     @Override
     public void execute() throws HaruException, IOException {

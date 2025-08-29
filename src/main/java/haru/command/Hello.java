@@ -9,6 +9,7 @@ public class Hello extends Command {
 
     /**
      * Constructs a Hello command.
+     *
      * @param ctx command context for execution
      */
     public Hello(CommandContext ctx) {

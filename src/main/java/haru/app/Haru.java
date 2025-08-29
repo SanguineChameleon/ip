@@ -38,9 +38,10 @@ public class Haru {
 
     /**
      * Runs a command from user input.
+     *
      * @param str the command string
      * @throws HaruException if command parsing or execution fails
-     * @throws IOException if IO error occurs
+     * @throws IOException   if IO error occurs
      */
     private static void runCommand(String str) throws HaruException, IOException {
         String[] tokens = Stream.of(str.split(" "))
@@ -68,6 +69,7 @@ public class Haru {
 
     /**
      * Entry point of the application.
+     *
      * @param args the command-line arguments
      */
     public static void main(String[] args) {

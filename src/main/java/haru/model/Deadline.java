@@ -8,8 +8,9 @@ public class Deadline extends Task {
 
     /**
      * Constructs a Deadline task with name and deadline time.
+     *
      * @param name the task name
-     * @param by the deadline time
+     * @param by   the deadline time
      */
     public Deadline(String name, TaskTime by) {
         super(name, TaskType.DEADLINE);
@@ -18,6 +19,7 @@ public class Deadline extends Task {
 
     /**
      * Returns the task description with deadline.
+     *
      * @return the task description
      */
     @Override

@@ -12,6 +12,7 @@ public enum TaskType {
 
     /**
      * Constructs a TaskType with code.
+     *
      * @param code the task type code
      */
     TaskType(char code) {
@@ -20,6 +21,7 @@ public enum TaskType {
 
     /**
      * Returns the task type code.
+     *
      * @return the task type code
      */
     public char getCode() {

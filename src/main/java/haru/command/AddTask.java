@@ -12,8 +12,9 @@ public abstract class AddTask extends Command {
 
     /**
      * Constructs an AddTask command with option aliases.
+     *
      * @param aliases map of option aliases
-     * @param ctx command context for execution
+     * @param ctx     command context for execution
      */
     public AddTask(HashMap<String, String> aliases, CommandContext ctx) {
         super(aliases, ctx);
@@ -21,6 +22,7 @@ public abstract class AddTask extends Command {
 
     /**
      * Adds a task to the task list and shows confirmation.
+     *
      * @param task the task to add
      * @throws IOException if UI output fails
      */

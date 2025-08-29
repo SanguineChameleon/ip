@@ -10,6 +10,7 @@ public class UI {
 
     /**
      * Reads a line of input from the user.
+     *
      * @return the input line
      */
     public String readLine() {
@@ -18,6 +19,7 @@ public class UI {
 
     /**
      * Displays a message to the user.
+     *
      * @param msg the message to display
      */
     public void show(String msg) {

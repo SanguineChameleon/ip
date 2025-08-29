@@ -9,6 +9,7 @@ public class ListTasks extends Command {
 
     /**
      * Constructs a ListTasks command.
+     *
      * @param ctx command context for execution
      */
     public ListTasks(CommandContext ctx) {

@@ -27,7 +27,8 @@ public class TaskTime implements Serializable {
 
     /**
      * Constructs a TaskTime by parsing a string with supported formats.
-     * @param alias the argument name
+     *
+     * @param alias   the argument name
      * @param strTime the string representation of time
      * @throws HaruException if parsing fails
      */
@@ -45,6 +46,7 @@ public class TaskTime implements Serializable {
 
     /**
      * Returns the string representation of the time.
+     *
      * @return the formatted time string
      */
     @Override

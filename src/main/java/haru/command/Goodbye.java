@@ -11,6 +11,7 @@ public class Goodbye extends Command {
 
     /**
      * Constructs a Goodbye command.
+     *
      * @param ctx command context for execution
      */
     public Goodbye(CommandContext ctx) {

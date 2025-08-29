@@ -12,8 +12,9 @@ public class CommandContext {
 
     /**
      * Constructs a CommandContext with task list and UI.
+     *
      * @param taskList the task list
-     * @param ui the UI
+     * @param ui       the UI
      */
     public CommandContext(TaskList taskList, UI ui) {
         this.taskList = taskList;
@@ -22,6 +23,7 @@ public class CommandContext {
 
     /**
      * Returns the task list.
+     *
      * @return the task list
      */
     public TaskList getTaskList() {
@@ -30,6 +32,7 @@ public class CommandContext {
 
     /**
      * Returns the UI.
+     *
      * @return the UI
      */
     public UI getUI() {

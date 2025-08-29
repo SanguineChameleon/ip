@@ -12,6 +12,7 @@ public abstract class Task implements Serializable {
 
     /**
      * Constructs a Task with name and type.
+     *
      * @param name the task name
      * @param type the task type
      */
@@ -36,6 +37,7 @@ public abstract class Task implements Serializable {
 
     /**
      * Returns the task name.
+     *
      * @return the task name
      */
     public String getName() {
@@ -44,6 +46,7 @@ public abstract class Task implements Serializable {
 
     /**
      * Returns the task description.
+     *
      * @return the task description
      */
     public String getDescription() {
@@ -52,6 +55,7 @@ public abstract class Task implements Serializable {
 
     /**
      * Returns the string representation of the task.
+     *
      * @return the string representation
      */
     @Override

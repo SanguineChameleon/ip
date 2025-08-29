@@ -7,6 +7,7 @@ public class UnknownOptionException extends HaruException {
 
     /**
      * Constructs an UnknownOptionException with the unknown option name.
+     *
      * @param name the unknown option name
      */
     public UnknownOptionException(String name) {

@@ -15,6 +15,7 @@ public class AddDeadline extends AddTask {
 
     /**
      * Constructs an AddDeadline command with required options.
+     *
      * @param ctx command context for execution
      */
     public AddDeadline(CommandContext ctx) {
@@ -26,8 +27,9 @@ public class AddDeadline extends AddTask {
 
     /**
      * Executes the command to add a deadline task.
+     *
      * @throws HaruException if task creation fails
-     * @throws IOException if IO error occurs
+     * @throws IOException   if IO error occurs
      */
     @Override
     public void execute() throws HaruException, IOException {

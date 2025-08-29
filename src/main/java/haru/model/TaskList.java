@@ -20,8 +20,9 @@ public class TaskList implements Serializable {
 
     /**
      * Constructs a TaskList with file path and tasks.
+     *
      * @param filePath the file path
-     * @param tasks the task list
+     * @param tasks    the task list
      */
     private TaskList(String filePath, ArrayList<Task> tasks) {
         this.filePath = filePath;
@@ -30,6 +31,7 @@ public class TaskList implements Serializable {
 
     /**
      * Creates an empty TaskList with file path.
+     *
      * @param filePath the file path
      * @return the empty TaskList
      */
@@ -39,9 +41,10 @@ public class TaskList implements Serializable {
 
     /**
      * Loads a TaskList from a file.
+     *
      * @param filePath the file path
      * @return the loaded TaskList
-     * @throws IOException if file read fails
+     * @throws IOException            if file read fails
      * @throws ClassNotFoundException if class is not found
      */
     public static TaskList fromFile(String filePath)
@@ -54,6 +57,7 @@ public class TaskList implements Serializable {
 
     /**
      * Creates a TaskList from an existing list of tasks.
+     *
      * @param tasks the task list
      * @return the TaskList
      */
@@ -63,6 +67,7 @@ public class TaskList implements Serializable {
 
     /**
      * Writes the TaskList to file.
+     *
      * @throws IOException if file write fails
      */
     public void writeToFile() throws IOException {
@@ -77,6 +82,7 @@ public class TaskList implements Serializable {
 
     /**
      * Parses a string into a task ID index.
+     *
      * @param str the string to parse
      * @return the zero-based task index
      * @throws HaruException if parsing fails or index is invalid
@@ -97,6 +103,7 @@ public class TaskList implements Serializable {
 
     /**
      * Adds a task to the list and writes to file.
+     *
      * @param task the task to add
      * @throws IOException if file write fails
      */
@@ -107,6 +114,7 @@ public class TaskList implements Serializable {
 
     /**
      * Removes a task from the list and writes to file.
+     *
      * @param index the task index
      * @return the removed task
      * @throws IOException if file write fails
@@ -120,6 +128,7 @@ public class TaskList implements Serializable {
 
     /**
      * Marks a task as done and writes to file.
+     *
      * @param index the task index
      * @return the updated task
      * @throws IOException if file write fails
@@ -133,6 +142,7 @@ public class TaskList implements Serializable {
 
     /**
      * Unmarks a task as not done and writes to file.
+     *
      * @param index the task index
      * @return the updated task
      * @throws IOException if file write fails
@@ -162,6 +172,7 @@ public class TaskList implements Serializable {
 
     /**
      * Returns the string representation of the task list.
+     *
      * @return the string representation
      */
     @Override

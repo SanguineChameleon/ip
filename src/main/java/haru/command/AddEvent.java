@@ -15,6 +15,7 @@ public class AddEvent extends AddTask {
 
     /**
      * Constructs an AddEvent command with required options.
+     *
      * @param ctx command context for execution
      */
     public AddEvent(CommandContext ctx) {
@@ -27,8 +28,9 @@ public class AddEvent extends AddTask {
 
     /**
      * Executes the command to add an event task.
+     *
      * @throws HaruException if task creation fails
-     * @throws IOException if IO error occurs
+     * @throws IOException   if IO error occurs
      */
     @Override
     public void execute() throws HaruException, IOException {

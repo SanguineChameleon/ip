@@ -7,6 +7,7 @@ public class InvalidTimeException extends HaruException {
 
     /**
      * Constructs an InvalidTimeException with the invalid alias.
+     *
      * @param alias the name of the invalid time argument
      */
     public InvalidTimeException(String alias) {

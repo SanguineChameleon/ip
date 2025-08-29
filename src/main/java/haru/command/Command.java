@@ -10,9 +10,6 @@ import haru.model.TaskList;
 import haru.model.TaskTime;
 import haru.ui.UI;
 
-import java.io.IOException;
-import java.util.HashMap;
-
 /**
  * Base class for all commands.
  */
@@ -23,8 +20,9 @@ public abstract class Command {
 
     /**
      * Constructs a Command with option aliases and context.
+     *
      * @param aliases map of option aliases
-     * @param ctx command context for execution
+     * @param ctx     command context for execution
      */
     public Command(HashMap<String, String> aliases, CommandContext ctx) {
         this.aliases = new HashMap<>(aliases);
@@ -40,6 +38,7 @@ public abstract class Command {
 
     /**
      * Returns the task list from the context.
+     *
      * @return the task list
      */
     public TaskList getTaskList() {
@@ -48,6 +47,7 @@ public abstract class Command {
 
     /**
      * Returns the UI from the context.
+     *
      * @return the UI
      */
     public UI getUI() {
@@ -56,6 +56,7 @@ public abstract class Command {
 
     /**
      * Gets a required option value or throws if missing.
+     *
      * @param name the option name
      * @return the option value
      * @throws HaruException if option is missing
@@ -71,6 +72,7 @@ public abstract class Command {
 
     /**
      * Gets a required time option as TaskTime.
+     *
      * @param name the option name
      * @return the parsed TaskTime
      * @throws HaruException if option is missing or invalid
@@ -83,6 +85,7 @@ public abstract class Command {
 
     /**
      * Parses tokens into command options.
+     *
      * @param tokens the token array
      * @throws HaruException if unknown option is found
      */
@@ -110,8 +113,9 @@ public abstract class Command {
 
     /**
      * Executes the command.
+     *
      * @throws HaruException if command fails
-     * @throws IOException if IO error occurs
+     * @throws IOException   if IO error occurs
      */
     public abstract void execute() throws HaruException, IOException;
 }

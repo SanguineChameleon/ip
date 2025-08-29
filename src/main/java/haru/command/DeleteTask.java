@@ -15,6 +15,7 @@ public class DeleteTask extends Command {
 
     /**
      * Constructs a DeleteTask command with required options.
+     *
      * @param ctx command context for execution
      */
     public DeleteTask(CommandContext ctx) {
@@ -23,8 +24,9 @@ public class DeleteTask extends Command {
 
     /**
      * Executes the command to delete a task.
+     *
      * @throws HaruException if task deletion fails
-     * @throws IOException if IO error occurs
+     * @throws IOException   if IO error occurs
      */
     @Override
     public void execute() throws HaruException, IOException {
