@@ -32,6 +32,10 @@ public class TaskList implements Serializable {
         }
     }
 
+    public static TaskList fromList(ArrayList<Task> tasks) {
+        return new TaskList(null, tasks);
+    }
+
     public void writeToFile()
             throws IOException {
         try (FileOutputStream fos = new FileOutputStream(this.filePath);
