@@ -1,3 +1,5 @@
+package haru.exception;
+
 public class InvalidTaskIdException extends HaruException {
     public InvalidTaskIdException(int length) {
         super((length == 0)
