@@ -20,15 +20,27 @@ import haru.ui.UI;
 import java.io.IOException;
 import java.util.stream.Stream;
 
+/**
+ * Main application class for Haru.
+ */
 public class Haru {
     private static final String TASK_FILE_PATH = "tasks.ser";
     private static boolean isRunning = true;
     private static CommandContext ctx;
 
+    /**
+     * Stops the application.
+     */
     public static void stop() {
         Haru.isRunning = false;
     }
 
+    /**
+     * Runs a command from user input.
+     * @param str the command string
+     * @throws HaruException if command parsing or execution fails
+     * @throws IOException if IO error occurs
+     */
     private static void runCommand(String str) throws HaruException, IOException {
         String[] tokens = Stream.of(str.split(" "))
                 .filter(t -> !t.isEmpty())
@@ -52,6 +64,10 @@ public class Haru {
         command.execute();
     }
 
+    /**
+     * Entry point of the application.
+     * @param args the command-line arguments
+     */
     public static void main(String[] args) {
         TaskList taskList;
         try {

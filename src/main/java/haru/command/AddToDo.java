@@ -7,11 +7,24 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Command to add a todo task.
+ */
 public class AddToDo extends AddTask {
+
+    /**
+     * Constructs an AddToDo command with required options.
+     * @param ctx command context for execution
+     */
     public AddToDo(CommandContext ctx) {
         super(new HashMap<>(Map.of("primary", "task name")), ctx);
     }
 
+    /**
+     * Executes the command to add a todo task.
+     * @throws HaruException if task creation fails
+     * @throws IOException if IO error occurs
+     */
     @Override
     public void execute() throws HaruException, IOException {
         String name = super.getRequiredOption("primary");

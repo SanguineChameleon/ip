@@ -8,7 +8,15 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Command to add an event task.
+ */
 public class AddEvent extends AddTask {
+
+    /**
+     * Constructs an AddEvent command with required options.
+     * @param ctx command context for execution
+     */
     public AddEvent(CommandContext ctx) {
         super(new HashMap<>(Map.of(
                 "primary", "event name",
@@ -17,6 +25,11 @@ public class AddEvent extends AddTask {
         )), ctx);
     }
 
+    /**
+     * Executes the command to add an event task.
+     * @throws HaruException if task creation fails
+     * @throws IOException if IO error occurs
+     */
     @Override
     public void execute() throws HaruException, IOException {
         String name = super.getRequiredOption("primary");

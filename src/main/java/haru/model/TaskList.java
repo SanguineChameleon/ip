@@ -11,19 +11,39 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Represents a list of tasks with persistence support.
+ */
 public class TaskList implements Serializable {
     private final String filePath;
     private final ArrayList<Task> tasks;
 
+    /**
+     * Constructs a TaskList with file path and tasks.
+     * @param filePath the file path
+     * @param tasks the task list
+     */
     private TaskList(String filePath, ArrayList<Task> tasks) {
         this.filePath = filePath;
         this.tasks = tasks;
     }
 
+    /**
+     * Creates an empty TaskList with file path.
+     * @param filePath the file path
+     * @return the empty TaskList
+     */
     public static TaskList empty(String filePath) {
         return new TaskList(filePath, new ArrayList<>());
     }
 
+    /**
+     * Loads a TaskList from a file.
+     * @param filePath the file path
+     * @return the loaded TaskList
+     * @throws IOException if file read fails
+     * @throws ClassNotFoundException if class is not found
+     */
     public static TaskList fromFile(String filePath)
             throws IOException, ClassNotFoundException {
         try (FileInputStream fis = new FileInputStream(filePath);
@@ -32,12 +52,20 @@ public class TaskList implements Serializable {
         }
     }
 
+    /**
+     * Creates a TaskList from an existing list of tasks.
+     * @param tasks the task list
+     * @return the TaskList
+     */
     public static TaskList fromList(ArrayList<Task> tasks) {
         return new TaskList(null, tasks);
     }
 
-    public void writeToFile()
-            throws IOException {
+    /**
+     * Writes the TaskList to file.
+     * @throws IOException if file write fails
+     */
+    public void writeToFile() throws IOException {
         if (this.filePath == null) {
             return;
         }
@@ -47,6 +75,12 @@ public class TaskList implements Serializable {
         }
     }
 
+    /**
+     * Parses a string into a task ID index.
+     * @param str the string to parse
+     * @return the zero-based task index
+     * @throws HaruException if parsing fails or index is invalid
+     */
     public int parseTaskId(String str) throws HaruException {
         int length = this.tasks.size();
         try {
@@ -61,11 +95,22 @@ public class TaskList implements Serializable {
         }
     }
 
+    /**
+     * Adds a task to the list and writes to file.
+     * @param task the task to add
+     * @throws IOException if file write fails
+     */
     public void add(Task task) throws IOException {
         this.tasks.add(task);
         this.writeToFile();
     }
 
+    /**
+     * Removes a task from the list and writes to file.
+     * @param index the task index
+     * @return the removed task
+     * @throws IOException if file write fails
+     */
     public Task remove(int index) throws IOException {
         Task task = this.tasks.get(index);
         this.tasks.remove(index);
@@ -73,6 +118,12 @@ public class TaskList implements Serializable {
         return task;
     }
 
+    /**
+     * Marks a task as done and writes to file.
+     * @param index the task index
+     * @return the updated task
+     * @throws IOException if file write fails
+     */
     public Task mark(int index) throws IOException {
         Task task = this.tasks.get(index);
         task.mark();
@@ -80,6 +131,12 @@ public class TaskList implements Serializable {
         return task;
     }
 
+    /**
+     * Unmarks a task as not done and writes to file.
+     * @param index the task index
+     * @return the updated task
+     * @throws IOException if file write fails
+     */
     public Task unmark(int index) throws IOException {
         Task task = this.tasks.get(index);
         task.unmark();
@@ -87,6 +144,10 @@ public class TaskList implements Serializable {
         return task;
     }
 
+    /**
+     * Returns the string representation of the task list.
+     * @return the string representation
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -8,11 +8,24 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Command to mark a task as done.
+ */
 public class MarkTask extends Command {
+
+    /**
+     * Constructs a MarkTask command with required options.
+     * @param ctx command context for execution
+     */
     public MarkTask(CommandContext ctx) {
         super(new HashMap<>(Map.of("primary", "task number")), ctx);
     }
 
+    /**
+     * Executes the command to mark a task as done.
+     * @throws HaruException if task update fails
+     * @throws IOException if IO error occurs
+     */
     @Override
     public void execute() throws HaruException, IOException {
         TaskList taskList = this.getTaskList();
