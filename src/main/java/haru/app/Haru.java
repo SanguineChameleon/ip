@@ -1,11 +1,15 @@
 package haru.app;
 
+import java.io.IOException;
+import java.util.stream.Stream;
+
 import haru.command.AddDeadline;
 import haru.command.AddEvent;
 import haru.command.AddToDo;
 import haru.command.Command;
 import haru.command.CommandContext;
 import haru.command.DeleteTask;
+import haru.command.FindTasks;
 import haru.command.Goodbye;
 import haru.command.Hello;
 import haru.command.ListTasks;
@@ -16,9 +20,6 @@ import haru.exception.HaruException;
 import haru.exception.UnknownCommandException;
 import haru.model.TaskList;
 import haru.ui.UI;
-
-import java.io.IOException;
-import java.util.stream.Stream;
 
 public class Haru {
     private static final String TASK_FILE_PATH = "tasks.ser";
@@ -46,6 +47,7 @@ public class Haru {
             case "mark" -> new MarkTask(Haru.ctx);
             case "unmark" -> new UnmarkTask(Haru.ctx);
             case "delete" -> new DeleteTask(Haru.ctx);
+            case "find" -> new FindTasks(Haru.ctx);
             default -> throw new UnknownCommandException();
         };
         command.parse(tokens);
