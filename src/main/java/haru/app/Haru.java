@@ -1,3 +1,5 @@
+package haru.app;
+
 import haru.command.AddDeadline;
 import haru.command.AddEvent;
 import haru.command.AddToDo;
