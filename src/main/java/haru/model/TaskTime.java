@@ -1,14 +1,14 @@
 package haru.model;
 
-import haru.exception.HaruException;
-import haru.exception.InvalidTimeException;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Locale;
+
+import haru.exception.HaruException;
+import haru.exception.InvalidTimeException;
 
 public class TaskTime implements Serializable {
     private static final List<DateTimeFormatter> FORMATS = List.of(
