@@ -1,9 +1,9 @@
 package haru.command;
 
-import haru.model.Task;
-
 import java.io.IOException;
 import java.util.HashMap;
+
+import haru.model.Task;
 
 public abstract class AddTask extends Command {
     public AddTask(HashMap<String, String> aliases, CommandContext ctx) {
