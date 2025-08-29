@@ -9,6 +9,7 @@ import haru.command.AddToDo;
 import haru.command.Command;
 import haru.command.CommandContext;
 import haru.command.DeleteTask;
+import haru.command.FindTasks;
 import haru.command.Goodbye;
 import haru.command.Hello;
 import haru.command.ListTasks;
@@ -58,6 +59,7 @@ public class Haru {
             case "mark" -> new MarkTask(Haru.ctx);
             case "unmark" -> new UnmarkTask(Haru.ctx);
             case "delete" -> new DeleteTask(Haru.ctx);
+            case "find" -> new FindTasks(Haru.ctx);
             default -> throw new UnknownCommandException();
         };
         command.parse(tokens);

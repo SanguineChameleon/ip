@@ -145,6 +145,22 @@ public class TaskList implements Serializable {
     }
 
     /**
+     * Finds tasks whose names contain the given string.
+     *
+     * @param str the string to search for
+     * @return a TaskList of matching tasks
+     */
+    public TaskList find(String str) {
+        ArrayList<Task> matches = new ArrayList<>();
+        for (Task task : this.tasks) {
+            if (task.getName().contains(str)) {
+                matches.add(task);
+            }
+        }
+        return TaskList.fromList(matches);
+    }
+
+    /**
      * Returns the string representation of the task list.
      * @return the string representation
      */
