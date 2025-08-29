@@ -1,8 +1,5 @@
 package haru.model;
 
-import haru.exception.HaruException;
-import haru.exception.InvalidTaskIdException;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -10,6 +7,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+
+import haru.exception.HaruException;
+import haru.exception.InvalidTaskIdException;
 
 public class TaskList implements Serializable {
     private final String filePath;
@@ -85,6 +85,22 @@ public class TaskList implements Serializable {
         task.unmark();
         this.writeToFile();
         return task;
+    }
+
+    /**
+     * Finds tasks whose names contain the given string.
+     *
+     * @param str the string to search for
+     * @return a TaskList of matching tasks
+     */
+    public TaskList find(String str) {
+        ArrayList<Task> matches = new ArrayList<>();
+        for (Task task : this.tasks) {
+            if (task.getName().contains(str)) {
+                matches.add(task);
+            }
+        }
+        return TaskList.fromList(matches);
     }
 
     @Override
