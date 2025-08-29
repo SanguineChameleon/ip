@@ -1,6 +1,7 @@
+package haru.model;
+
 import haru.exception.HaruException;
 import haru.exception.InvalidTaskIdException;
-import haru.model.Task;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
