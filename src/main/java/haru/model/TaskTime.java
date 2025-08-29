@@ -28,6 +28,7 @@ public class TaskTime implements Serializable {
                 this.time = LocalDateTime.parse(strTime, fmt);
                 return;
             } catch (DateTimeParseException e) {
+                // continue and check the next format
             }
         }
         throw new InvalidTimeException(alias);
