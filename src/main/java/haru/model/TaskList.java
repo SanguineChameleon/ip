@@ -38,6 +38,9 @@ public class TaskList implements Serializable {
 
     public void writeToFile()
             throws IOException {
+        if (this.filePath == null) {
+            return;
+        }
         try (FileOutputStream fos = new FileOutputStream(this.filePath);
              ObjectOutputStream out = new ObjectOutputStream(fos)) {
             out.writeObject(this);
