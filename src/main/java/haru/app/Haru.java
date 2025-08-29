@@ -1,5 +1,8 @@
 package haru.app;
 
+import java.io.IOException;
+import java.util.stream.Stream;
+
 import haru.command.AddDeadline;
 import haru.command.AddEvent;
 import haru.command.AddToDo;
@@ -16,9 +19,6 @@ import haru.exception.HaruException;
 import haru.exception.UnknownCommandException;
 import haru.model.TaskList;
 import haru.ui.UI;
-
-import java.io.IOException;
-import java.util.stream.Stream;
 
 public class Haru {
     private static final String TASK_FILE_PATH = "tasks.ser";
