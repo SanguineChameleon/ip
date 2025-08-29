@@ -10,11 +10,19 @@ import haru.ui.UI;
 import java.io.IOException;
 import java.util.HashMap;
 
+/**
+ * Base class for all commands.
+ */
 public abstract class Command {
     private final HashMap<String, String> options = new HashMap<>();
     private final HashMap<String, String> aliases;
     private final CommandContext ctx;
 
+    /**
+     * Constructs a Command with option aliases and context.
+     * @param aliases map of option aliases
+     * @param ctx command context for execution
+     */
     public Command(HashMap<String, String> aliases, CommandContext ctx) {
         this.aliases = new HashMap<>(aliases);
         for (String name : aliases.keySet()) {
@@ -27,14 +35,28 @@ public abstract class Command {
         this.ctx = ctx;
     }
 
+    /**
+     * Returns the task list from the context.
+     * @return the task list
+     */
     public TaskList getTaskList() {
         return this.ctx.getTaskList();
     }
 
+    /**
+     * Returns the UI from the context.
+     * @return the UI
+     */
     public UI getUI() {
         return this.ctx.getUI();
     }
 
+    /**
+     * Gets a required option value or throws if missing.
+     * @param name the option name
+     * @return the option value
+     * @throws HaruException if option is missing
+     */
     public String getRequiredOption(String name) throws HaruException {
         String value = this.options.get(name);
         if (value.isEmpty()) {
@@ -44,12 +66,23 @@ public abstract class Command {
         return value;
     }
 
+    /**
+     * Gets a required time option as TaskTime.
+     * @param name the option name
+     * @return the parsed TaskTime
+     * @throws HaruException if option is missing or invalid
+     */
     public TaskTime getRequiredTime(String name) throws HaruException {
         String strTime = getRequiredOption(name);
         String alias = this.aliases.get(name);
         return new TaskTime(alias, strTime);
     }
 
+    /**
+     * Parses tokens into command options.
+     * @param tokens the token array
+     * @throws HaruException if unknown option is found
+     */
     public void parse(String[] tokens) throws HaruException {
         StringBuilder sb = new StringBuilder();
         String name = "primary";
@@ -72,5 +105,10 @@ public abstract class Command {
         this.options.put(name, sb.toString());
     }
 
+    /**
+     * Executes the command.
+     * @throws HaruException if command fails
+     * @throws IOException if IO error occurs
+     */
     public abstract void execute() throws HaruException, IOException;
 }
