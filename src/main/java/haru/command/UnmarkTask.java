@@ -1,12 +1,12 @@
 package haru.command;
 
-import haru.exception.HaruException;
-import haru.model.Task;
-import haru.model.TaskList;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import haru.exception.HaruException;
+import haru.model.Task;
+import haru.model.TaskList;
 
 public class UnmarkTask extends Command {
     public UnmarkTask(CommandContext ctx) {
