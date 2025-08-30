@@ -44,7 +44,7 @@ test {
 }
 
 application {
-    mainClass.set("haru.app.Haru")
+    mainClass.set("haru.app.Launcher")
 }
 
 shadowJar {
