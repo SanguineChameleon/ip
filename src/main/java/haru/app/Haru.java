@@ -11,30 +11,26 @@ import haru.command.CommandContext;
 import haru.command.DeleteTask;
 import haru.command.FindTasks;
 import haru.command.Goodbye;
-import haru.command.Hello;
 import haru.command.ListTasks;
 import haru.command.MarkTask;
 import haru.command.UnmarkTask;
 import haru.exception.EmptyCommandException;
 import haru.exception.HaruException;
 import haru.exception.UnknownCommandException;
-import haru.model.TaskList;
-import haru.ui.UI;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
 /**
  * Main application class for Haru.
  */
-public class Haru {
+public class Haru extends Application {
     private static final String TASK_FILE_PATH = "tasks.ser";
     private static boolean isRunning = true;
     private static CommandContext ctx;
 
-    /**
-     * Stops the application.
-     */
-    public static void stop() {
+/*    public static void stop() {
         Haru.isRunning = false;
-    }
+    }*/
 
     /**
      * Runs a command from user input.
@@ -70,12 +66,12 @@ public class Haru {
         command.execute();
     }
 
-    /**
-     * Entry point of the application.
-     *
-     * @param args the command-line arguments
-     */
-    public static void main(String[] args) {
+    @Override
+    public void start(Stage stage) {
+
+    }
+
+/*    public static void main(String[] args) {
         TaskList taskList;
         try {
             taskList = TaskList.fromFile(TASK_FILE_PATH);
@@ -97,5 +93,5 @@ public class Haru {
                 ui.show("It's okay, you can try again~!");
             }
         }
-    }
+    }*/
 }
