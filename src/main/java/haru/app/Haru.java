@@ -124,7 +124,7 @@ public class Haru extends Application {
         } catch (IOException | ClassNotFoundException e) {
             taskList = TaskList.empty(TASK_FILE_PATH);
         }
-        UI ui = new UI();
+        Ui ui = new Ui();
         Haru.ctx = new CommandContext(taskList, ui);
         new Hello(Haru.ctx).execute();
         while (Haru.isRunning) {

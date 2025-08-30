@@ -8,7 +8,7 @@ import haru.exception.HaruException;
 import haru.exception.UnknownOptionException;
 import haru.model.TaskList;
 import haru.model.TaskTime;
-import haru.ui.UI;
+import haru.ui.Ui;
 
 /**
  * Base class for all commands.
@@ -46,11 +46,11 @@ public abstract class Command {
     }
 
     /**
-     * Returns the UI from the context.
+     * Returns the Ui from the context.
      *
-     * @return the UI
+     * @return the Ui
      */
-    public UI getUI() {
+    public Ui getUI() {
         return this.ctx.getUI();
     }
 

@@ -1,22 +1,22 @@
 package haru.command;
 
 import haru.model.TaskList;
-import haru.ui.UI;
+import haru.ui.Ui;
 
 /**
  * Holds context information for command execution.
  */
 public class CommandContext {
     private final TaskList taskList;
-    private final UI ui;
+    private final Ui ui;
 
     /**
-     * Constructs a CommandContext with task list and UI.
+     * Constructs a CommandContext with task list and Ui.
      *
      * @param taskList the task list
-     * @param ui       the UI
+     * @param ui       the Ui
      */
-    public CommandContext(TaskList taskList, UI ui) {
+    public CommandContext(TaskList taskList, Ui ui) {
         this.taskList = taskList;
         this.ui = ui;
     }
@@ -31,11 +31,11 @@ public class CommandContext {
     }
 
     /**
-     * Returns the UI.
+     * Returns the Ui.
      *
-     * @return the UI
+     * @return the Ui
      */
-    public UI getUI() {
+    public Ui getUI() {
         return this.ui;
     }
 }

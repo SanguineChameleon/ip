@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Handles user input and output.
  */
-public class UI {
+public class Ui {
     private final Scanner scanner = new Scanner(System.in);
 
     /**
