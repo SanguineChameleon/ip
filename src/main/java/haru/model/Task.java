@@ -61,8 +61,7 @@ public abstract class Task implements Serializable {
     @Override
     public String toString() {
         return String.format("[%c][%c] %s",
-                this.type.getCode(),
-                (this.isDone ? 'X' : ' '),
+                this.type.getCode(), (this.isDone ? 'X' : ' '),
                 this.getDescription());
     }
 }
