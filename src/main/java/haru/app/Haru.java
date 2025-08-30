@@ -20,6 +20,10 @@ import haru.exception.UnknownCommandException;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -70,11 +74,40 @@ public class Haru extends Application {
 
     @Override
     public void start(Stage stage) {
-        Label helloWorld = new Label("Hello World!"); // Creating a new Label control
-        Scene scene = new Scene(helloWorld); // Setting the scene to be our Label
+        AnchorPane layout = new AnchorPane();
 
-        stage.setScene(scene); // Setting the stage to show our scene
-        stage.show(); // Render the stage.
+        VBox chat = new VBox();
+
+        ScrollPane scrollPane = new ScrollPane(chat);
+        layout.getChildren().add(scrollPane);
+        AnchorPane.setTopAnchor(scrollPane, 0.0);
+        AnchorPane.setLeftAnchor(scrollPane, 0.0);
+        AnchorPane.setRightAnchor(scrollPane, 0.0);
+
+        chat.heightProperty().addListener(
+                (o, oldH, newH)
+                        -> scrollPane.setVvalue(1.0));
+
+        TextField input = new TextField();
+        layout.getChildren().add(input);
+        AnchorPane.setLeftAnchor(input, 0.0);
+        AnchorPane.setRightAnchor(input, 0.0);
+        AnchorPane.setBottomAnchor(input, 0.0);
+
+        input.heightProperty().addListener(
+                (obs, oldH, newH)
+                        -> AnchorPane.setBottomAnchor(scrollPane, newH.doubleValue())
+        );
+
+        for (int i = 1; i <= 1000; i++) {
+            chat.getChildren().add(new Label("Message " + i));
+        }
+
+        Scene scene = new Scene(layout, 400, 600);
+        stage.setScene(scene);
+        stage.setTitle("Haru");
+        stage.setResizable(false);
+        stage.show();
     }
 
 /*    public static void main(String[] args) {
