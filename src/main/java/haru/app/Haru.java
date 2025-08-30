@@ -19,10 +19,13 @@ import haru.exception.HaruException;
 import haru.exception.UnknownCommandException;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -89,12 +92,16 @@ public class Haru extends Application {
                         -> scrollPane.setVvalue(1.0));
 
         TextField input = new TextField();
-        layout.getChildren().add(input);
-        AnchorPane.setLeftAnchor(input, 0.0);
-        AnchorPane.setRightAnchor(input, 0.0);
-        AnchorPane.setBottomAnchor(input, 0.0);
+        Button send = new Button("Send");
 
-        input.heightProperty().addListener(
+        HBox bottom = new HBox(0, input, send);
+        layout.getChildren().add(bottom);
+        HBox.setHgrow(input, Priority.ALWAYS);
+        AnchorPane.setLeftAnchor(bottom, 0.0);
+        AnchorPane.setRightAnchor(bottom, 0.0);
+        AnchorPane.setBottomAnchor(bottom, 0.0);
+
+        bottom.heightProperty().addListener(
                 (obs, oldH, newH)
                         -> AnchorPane.setBottomAnchor(scrollPane, newH.doubleValue())
         );
