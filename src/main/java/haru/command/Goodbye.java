@@ -2,8 +2,6 @@ package haru.command;
 
 import java.util.HashMap;
 
-import haru.app.Haru;
-
 /**
  * Command to exit the application.
  */
@@ -24,6 +22,6 @@ public class Goodbye extends Command {
     @Override
     public void execute() {
         this.getUI().show("See you next time! Bye-bye~!");
-        Haru.stop();
+        //Haru.stop();
     }
 }
