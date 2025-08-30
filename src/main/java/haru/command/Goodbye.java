@@ -21,7 +21,7 @@ public class Goodbye extends Command {
      */
     @Override
     public void execute() {
-        this.getUI().show("See you next time! Bye-bye~!");
+        this.getUi().show("See you next time! Bye-bye~!");
         //Haru.stop();
     }
 }

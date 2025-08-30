@@ -27,7 +27,7 @@ public class FindTasks extends Command {
     @Override
     public void execute() throws HaruException {
         String str = super.getRequiredOption("primary");
-        this.getUI().show("Okay~! Here are all the tasks that match:");
-        this.getUI().show(this.getTaskList().find(str).toString());
+        this.getUi().show("Okay~! Here are all the tasks that match:");
+        this.getUi().show(this.getTaskList().find(str).toString());
     }
 }

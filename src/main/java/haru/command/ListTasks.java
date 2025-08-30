@@ -21,7 +21,7 @@ public class ListTasks extends Command {
      */
     @Override
     public void execute() {
-        this.getUI().show("Okay~! Here are all the tasks in your list:");
-        this.getUI().show(this.getTaskList().toString());
+        this.getUi().show("Okay~! Here are all the tasks in your list:");
+        this.getUi().show(this.getTaskList().toString());
     }
 }

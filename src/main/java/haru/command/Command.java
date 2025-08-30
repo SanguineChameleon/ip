@@ -50,7 +50,7 @@ public abstract class Command {
      *
      * @return the Ui
      */
-    public Ui getUI() {
+    public Ui getUi() {
         return this.ctx.getUI();
     }
 
