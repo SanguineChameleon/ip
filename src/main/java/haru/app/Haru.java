@@ -51,18 +51,21 @@ public class Haru {
             throw new EmptyCommandException();
         }
         String name = tokens[0];
+        // IntelliJ IDEA auto formatting doesn't work for switch expressions
+        // @formatter:off
         Command command = switch (name) {
-            case "bye" -> new Goodbye(Haru.ctx);
-            case "todo" -> new AddToDo(Haru.ctx);
-            case "deadline" -> new AddDeadline(Haru.ctx);
-            case "event" -> new AddEvent(Haru.ctx);
-            case "list" -> new ListTasks(Haru.ctx);
-            case "mark" -> new MarkTask(Haru.ctx);
-            case "unmark" -> new UnmarkTask(Haru.ctx);
-            case "delete" -> new DeleteTask(Haru.ctx);
-            case "find" -> new FindTasks(Haru.ctx);
-            default -> throw new UnknownCommandException();
+        case "bye" -> new Goodbye(Haru.ctx);
+        case "todo" -> new AddToDo(Haru.ctx);
+        case "deadline" -> new AddDeadline(Haru.ctx);
+        case "event" -> new AddEvent(Haru.ctx);
+        case "list" -> new ListTasks(Haru.ctx);
+        case "mark" -> new MarkTask(Haru.ctx);
+        case "unmark" -> new UnmarkTask(Haru.ctx);
+        case "delete" -> new DeleteTask(Haru.ctx);
+        case "find" -> new FindTasks(Haru.ctx);
+        default -> throw new UnknownCommandException();
         };
+        // @formatter:on
         command.parse(tokens);
         command.execute();
     }
