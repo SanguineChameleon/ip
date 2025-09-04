@@ -17,8 +17,6 @@ import haru.command.UnmarkTask;
 import haru.exception.EmptyCommandException;
 import haru.exception.HaruException;
 import haru.exception.UnknownCommandException;
-import haru.ui.HaruMessage;
-import haru.ui.UserMessage;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -76,8 +74,7 @@ public class Haru extends Application {
         command.execute();
     }
 
-    @Override
-    public void start(Stage stage) {
+    private void setStage(Stage stage) {
         AnchorPane layout = new AnchorPane();
 
         VBox chat = new VBox();
@@ -89,7 +86,7 @@ public class Haru extends Application {
         AnchorPane.setLeftAnchor(scrollPane, 0.0);
         AnchorPane.setRightAnchor(scrollPane, 0.0);
         scrollPane.setFitToWidth(true);
-        
+
         chat.heightProperty().addListener(
                 (o, oldH, newH)
                         -> scrollPane.setVvalue(1.0));
@@ -109,16 +106,16 @@ public class Haru extends Application {
                         -> AnchorPane.setBottomAnchor(scrollPane, newH.doubleValue())
         );
 
-        for (int i = 1; i <= 1000; i++) {
-            chat.getChildren().add(new HaruMessage("Message" + i));
-            chat.getChildren().add(new UserMessage("Message" + i));
-        }
-
         Scene scene = new Scene(layout, 400, 600);
         stage.setScene(scene);
         stage.setTitle("Haru");
         stage.setResizable(false);
         stage.show();
+    }
+
+    @Override
+    public void start(Stage stage) {
+        this.setStage(stage);
     }
 
 /*    public static void main(String[] args) {
