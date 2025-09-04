@@ -17,10 +17,11 @@ import haru.command.UnmarkTask;
 import haru.exception.EmptyCommandException;
 import haru.exception.HaruException;
 import haru.exception.UnknownCommandException;
+import haru.ui.HaruMessage;
+import haru.ui.UserMessage;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -80,13 +81,15 @@ public class Haru extends Application {
         AnchorPane layout = new AnchorPane();
 
         VBox chat = new VBox();
+        chat.setFillWidth(true);
 
         ScrollPane scrollPane = new ScrollPane(chat);
         layout.getChildren().add(scrollPane);
         AnchorPane.setTopAnchor(scrollPane, 0.0);
         AnchorPane.setLeftAnchor(scrollPane, 0.0);
         AnchorPane.setRightAnchor(scrollPane, 0.0);
-
+        scrollPane.setFitToWidth(true);
+        
         chat.heightProperty().addListener(
                 (o, oldH, newH)
                         -> scrollPane.setVvalue(1.0));
@@ -107,7 +110,8 @@ public class Haru extends Application {
         );
 
         for (int i = 1; i <= 1000; i++) {
-            chat.getChildren().add(new Label("Message " + i));
+            chat.getChildren().add(new HaruMessage("Message" + i));
+            chat.getChildren().add(new UserMessage("Message" + i));
         }
 
         Scene scene = new Scene(layout, 400, 600);
