@@ -36,7 +36,6 @@ import javafx.stage.Stage;
  */
 public class Haru extends Application {
     private static final String TASK_FILE_PATH = "tasks.ser";
-    private static boolean isRunning = true;
     private CommandContext ctx;
     private Ui ui;
     private VBox chat;
