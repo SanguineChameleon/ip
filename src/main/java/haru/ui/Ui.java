@@ -9,6 +9,10 @@ public class Ui {
         this.chat = chat;
     }
 
+    public void showUserMessage(String msg) {
+        this.chat.getChildren().add(new UserMessage(msg));
+    }
+
     public void show(String msg) {
         this.chat.getChildren().add(new HaruMessage(msg));
     }
