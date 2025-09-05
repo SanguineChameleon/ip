@@ -27,8 +27,8 @@ public abstract class AddTask extends Command {
      * @throws IOException if Ui output fails
      */
     public void add(Task task) throws IOException {
-        this.getUi().show("Okay~! I will add this task to your list:");
-        this.getUi().show(task.toString());
+        this.getUi().showHaruMessage("Okay~! I will add this task to your list:");
+        this.getUi().showHaruMessage(task.toString());
         this.getTaskList().add(task);
     }
 }

@@ -21,6 +21,6 @@ public class Hello extends Command {
      */
     @Override
     public void execute() {
-        this.getUi().show("Hi~! I'm Haru. What can I do for you today?");
+        this.getUi().showHaruMessage("Hi~! I'm Haru. What can I do for you today?");
     }
 }

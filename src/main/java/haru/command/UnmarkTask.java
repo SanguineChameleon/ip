@@ -33,7 +33,7 @@ public class UnmarkTask extends Command {
         TaskList taskList = this.getTaskList();
         int id = taskList.parseTaskId(this.getRequiredOption("primary"));
         Task task = taskList.unmark(id);
-        this.getUi().show("Okay~! I will unmark this task as not done:");
-        this.getUi().show(task.toString());
+        this.getUi().showHaruMessage("Okay~! I will unmark this task as not done:");
+        this.getUi().showHaruMessage(task.toString());
     }
 }

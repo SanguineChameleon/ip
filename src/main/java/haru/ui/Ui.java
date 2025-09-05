@@ -13,7 +13,7 @@ public class Ui {
         this.chat.getChildren().add(new UserMessage(msg));
     }
 
-    public void show(String msg) {
+    public void showHaruMessage(String msg) {
         this.chat.getChildren().add(new HaruMessage(msg));
     }
 }

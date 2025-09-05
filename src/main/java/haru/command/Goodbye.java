@@ -23,7 +23,7 @@ public class Goodbye extends Command {
      */
     @Override
     public void execute() {
-        this.getUi().show("See you next time! Bye-bye~!");
+        this.getUi().showHaruMessage("See you next time! Bye-bye~!");
         Platform.exit();
     }
 }

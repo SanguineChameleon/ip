@@ -129,11 +129,11 @@ public class Haru extends Application {
             runCommand(str);
         } catch (HaruException | IOException e) {
             if (e instanceof HaruException) {
-                ui.show(e.getMessage());
+                ui.showHaruMessage(e.getMessage());
             } else {
-                ui.show("Eh?! Something went wrong with reading/saving your file!");
+                ui.showHaruMessage("Eh?! Something went wrong with reading/saving your file!");
             }
-            ui.show("It's okay, you can try again~!");
+            ui.showHaruMessage("It's okay, you can try again~!");
         }
     }
 

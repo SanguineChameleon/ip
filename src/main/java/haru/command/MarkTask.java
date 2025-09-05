@@ -33,7 +33,7 @@ public class MarkTask extends Command {
         TaskList taskList = this.getTaskList();
         int id = taskList.parseTaskId(this.getRequiredOption("primary"));
         Task task = taskList.mark(id);
-        this.getUi().show("Okay~! I will mark this task as done:");
-        this.getUi().show(task.toString());
+        this.getUi().showHaruMessage("Okay~! I will mark this task as done:");
+        this.getUi().showHaruMessage(task.toString());
     }
 }
