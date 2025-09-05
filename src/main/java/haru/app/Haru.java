@@ -37,7 +37,7 @@ import javafx.stage.Stage;
 public class Haru extends Application {
     private static final String TASK_FILE_PATH = "tasks.ser";
     private static boolean isRunning = true;
-    private static CommandContext ctx;
+    private CommandContext ctx;
     private Ui ui;
     private VBox chat;
 
@@ -52,7 +52,7 @@ public class Haru extends Application {
      * @throws HaruException if command parsing or execution fails
      * @throws IOException   if IO error occurs
      */
-    private static void runCommand(String str) throws HaruException, IOException {
+    private void runCommand(String str) throws HaruException, IOException {
         String[] tokens = Stream.of(str.split(" "))
                 .filter(t -> !t.isEmpty())
                 .toArray(String[]::new);
@@ -63,15 +63,15 @@ public class Haru extends Application {
         // IntelliJ IDEA auto formatting doesn't work for switch expressions
         // @formatter:off
         Command command = switch (name) {
-        case "bye" -> new Goodbye(Haru.ctx);
-        case "todo" -> new AddToDo(Haru.ctx);
-        case "deadline" -> new AddDeadline(Haru.ctx);
-        case "event" -> new AddEvent(Haru.ctx);
-        case "list" -> new ListTasks(Haru.ctx);
-        case "mark" -> new MarkTask(Haru.ctx);
-        case "unmark" -> new UnmarkTask(Haru.ctx);
-        case "delete" -> new DeleteTask(Haru.ctx);
-        case "find" -> new FindTasks(Haru.ctx);
+        case "bye" -> new Goodbye(ctx);
+        case "todo" -> new AddToDo(ctx);
+        case "deadline" -> new AddDeadline(ctx);
+        case "event" -> new AddEvent(ctx);
+        case "list" -> new ListTasks(ctx);
+        case "mark" -> new MarkTask(ctx);
+        case "unmark" -> new UnmarkTask(ctx);
+        case "delete" -> new DeleteTask(ctx);
+        case "find" -> new FindTasks(ctx);
         default -> throw new UnknownCommandException();
         };
         // @formatter:on
@@ -131,7 +131,7 @@ public class Haru extends Application {
     private void handleInput(String str) {
         ui.showUserMessage(str);
         try {
-            Haru.runCommand(str);
+            runCommand(str);
         } catch (HaruException | IOException e) {
             if (e instanceof HaruException) {
                 ui.show(e.getMessage());
@@ -153,7 +153,7 @@ public class Haru extends Application {
             taskList = TaskList.empty(TASK_FILE_PATH);
         }
         ui = new Ui(chat);
-        Haru.ctx = new CommandContext(taskList, ui);
-        new Hello(Haru.ctx).execute();
+        ctx = new CommandContext(taskList, ui);
+        new Hello(ctx).execute();
     }
 }
