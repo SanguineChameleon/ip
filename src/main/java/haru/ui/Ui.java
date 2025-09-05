@@ -1,28 +1,15 @@
 package haru.ui;
 
-import java.util.Scanner;
+import javafx.scene.layout.VBox;
 
-/**
- * Handles user input and output.
- */
 public class Ui {
-    private final Scanner scanner = new Scanner(System.in);
+    private final VBox chat;
 
-    /**
-     * Reads a line of input from the user.
-     *
-     * @return the input line
-     */
-    public String readLine() {
-        return scanner.nextLine();
+    public Ui(VBox chat) {
+        this.chat = chat;
     }
 
-    /**
-     * Displays a message to the user.
-     *
-     * @param msg the message to display
-     */
     public void show(String msg) {
-        System.out.println(msg);
+        this.chat.getChildren().add(new HaruMessage(msg));
     }
 }
