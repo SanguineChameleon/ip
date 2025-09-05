@@ -8,6 +8,8 @@ import javafx.application.Application;
 public class Launcher {
     /**
      * Entry point that launches the Haru JavaFX application.
+     *
+     * @param args the command-line arguments passed to the application
      */
     public static void main(String[] args) {
         Application.launch(Haru.class, args);
