@@ -37,6 +37,7 @@ import javafx.stage.Stage;
 public class Haru extends Application {
     private static final String TASK_FILE_PATH = "tasks.ser";
     private static boolean isRunning = true;
+    private static Ui ui;
     private static CommandContext ctx;
     private VBox chat;
 
@@ -110,11 +111,35 @@ public class Haru extends Application {
                         -> AnchorPane.setBottomAnchor(scrollPane, newH.doubleValue())
         );
 
+        send.setOnMouseClicked((event) -> {
+            handleInput(input.getText());
+            input.clear();
+        });
+
+        input.setOnAction((event) -> {
+            handleInput(input.getText());
+            input.clear();
+        });
+
         Scene scene = new Scene(layout, 400, 600);
         stage.setScene(scene);
         stage.setTitle("Haru");
         stage.setResizable(false);
         stage.show();
+    }
+
+    private void handleInput(String str) {
+        ui.showUserMessage(str);
+        try {
+            Haru.runCommand(str);
+        } catch (HaruException | IOException e) {
+            if (e instanceof HaruException) {
+                ui.show(e.getMessage());
+            } else {
+                ui.show("Eh?! Something went wrong with reading/saving your file!");
+            }
+            ui.show("It's okay, you can try again~!");
+        }
     }
 
     @Override
@@ -127,20 +152,8 @@ public class Haru extends Application {
         } catch (IOException | ClassNotFoundException e) {
             taskList = TaskList.empty(TASK_FILE_PATH);
         }
-        Ui ui = new Ui(chat);
+        ui = new Ui(chat);
         Haru.ctx = new CommandContext(taskList, ui);
         new Hello(Haru.ctx).execute();
-/*        while (Haru.isRunning) {
-            try {
-                Haru.runCommand(ui.readLine());
-            } catch (HaruException | IOException e) {
-                if (e instanceof HaruException) {
-                    ui.show(e.getMessage());
-                } else {
-                    ui.show("Eh?! Something went wrong with reading/saving your file!");
-                }
-                ui.show("It's okay, you can try again~!");
-            }
-        }*/
     }
 }
