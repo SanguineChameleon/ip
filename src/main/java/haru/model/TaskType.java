@@ -4,8 +4,19 @@ package haru.model;
  * Represents the type of a task.
  */
 public enum TaskType {
+    /**
+     * A to-do task.
+     */
     TODO('T'),
+
+    /**
+     * A deadline task.
+     */
     DEADLINE('D'),
+
+    /**
+     * An event task.
+     */
     EVENT('E');
 
     private final char code;
