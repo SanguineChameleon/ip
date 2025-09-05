@@ -22,12 +22,7 @@ import haru.model.TaskList;
 import haru.ui.Ui;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -75,48 +70,34 @@ public class Haru extends Application {
     }
 
     private void setStage(Stage stage) {
-        AnchorPane layout = new AnchorPane();
+        javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(
+                getClass().getResource("/view/main.fxml")
+        );
+        AnchorPane root;
+        try {
+            root = loader.load();
+        } catch (java.io.IOException e) {
+            throw new RuntimeException("Failed to load FXML", e);
+        }
 
-        chat = new VBox();
-        chat.setFillWidth(true);
+        haru.ui.UiController c = loader.getController();
 
-        ScrollPane scrollPane = new ScrollPane(chat);
-        layout.getChildren().add(scrollPane);
-        AnchorPane.setTopAnchor(scrollPane, 0.0);
-        AnchorPane.setLeftAnchor(scrollPane, 0.0);
-        AnchorPane.setRightAnchor(scrollPane, 0.0);
-        scrollPane.setFitToWidth(true);
+        this.chat = c.getChat();
+        this.chat.setFillWidth(true);
+        c.getScroll().setFitToWidth(true);
 
-        chat.heightProperty().addListener(
-                (o, oldH, newH)
-                        -> scrollPane.setVvalue(1.0));
-
-        TextField input = new TextField();
-        Button send = new Button("Send");
-
-        HBox bottom = new HBox(0, input, send);
-        layout.getChildren().add(bottom);
-        HBox.setHgrow(input, Priority.ALWAYS);
-        AnchorPane.setLeftAnchor(bottom, 0.0);
-        AnchorPane.setRightAnchor(bottom, 0.0);
-        AnchorPane.setBottomAnchor(bottom, 0.0);
-
-        bottom.heightProperty().addListener(
-                (obs, oldH, newH)
-                        -> AnchorPane.setBottomAnchor(scrollPane, newH.doubleValue())
+        this.chat.heightProperty().addListener(
+                (o, oldH, newH) -> c.getScroll().setVvalue(1.0)
         );
 
-        send.setOnMouseClicked((event) -> {
-            handleInput(input.getText());
-            input.clear();
-        });
+        c.getBottom().heightProperty().addListener(
+                (obs, oldH, newH) -> AnchorPane.setBottomAnchor(c.getScroll(), newH.doubleValue())
+        );
 
-        input.setOnAction((event) -> {
-            handleInput(input.getText());
-            input.clear();
-        });
+        c.getSend().setOnAction(event -> handleInput(c.getInput().getText()));
+        c.getInput().setOnAction(event -> handleInput(c.getInput().getText()));
 
-        Scene scene = new Scene(layout, 400, 600);
+        Scene scene = new Scene(root, 400, 600);
         stage.setScene(scene);
         stage.setTitle("Haru");
         stage.setResizable(false);
