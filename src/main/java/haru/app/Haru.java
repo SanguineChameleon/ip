@@ -40,10 +40,6 @@ public class Haru extends Application {
     private Ui ui;
     private VBox chat;
 
-/*    public static void stop() {
-        Haru.isRunning = false;
-    }*/
-
     /**
      * Runs a command from user input.
      *
