@@ -11,12 +11,15 @@ import haru.command.CommandContext;
 import haru.command.DeleteTask;
 import haru.command.FindTasks;
 import haru.command.Goodbye;
+import haru.command.Hello;
 import haru.command.ListTasks;
 import haru.command.MarkTask;
 import haru.command.UnmarkTask;
 import haru.exception.EmptyCommandException;
 import haru.exception.HaruException;
 import haru.exception.UnknownCommandException;
+import haru.model.TaskList;
+import haru.ui.Ui;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -35,6 +38,7 @@ public class Haru extends Application {
     private static final String TASK_FILE_PATH = "tasks.ser";
     private static boolean isRunning = true;
     private static CommandContext ctx;
+    private VBox chat;
 
 /*    public static void stop() {
         Haru.isRunning = false;
@@ -77,7 +81,7 @@ public class Haru extends Application {
     private void setStage(Stage stage) {
         AnchorPane layout = new AnchorPane();
 
-        VBox chat = new VBox();
+        chat = new VBox();
         chat.setFillWidth(true);
 
         ScrollPane scrollPane = new ScrollPane(chat);
@@ -116,19 +120,17 @@ public class Haru extends Application {
     @Override
     public void start(Stage stage) {
         this.setStage(stage);
-    }
 
-/*    public static void main(String[] args) {
         TaskList taskList;
         try {
             taskList = TaskList.fromFile(TASK_FILE_PATH);
         } catch (IOException | ClassNotFoundException e) {
             taskList = TaskList.empty(TASK_FILE_PATH);
         }
-        Ui ui = new Ui();
+        Ui ui = new Ui(chat);
         Haru.ctx = new CommandContext(taskList, ui);
         new Hello(Haru.ctx).execute();
-        while (Haru.isRunning) {
+/*        while (Haru.isRunning) {
             try {
                 Haru.runCommand(ui.readLine());
             } catch (HaruException | IOException e) {
@@ -139,6 +141,6 @@ public class Haru extends Application {
                 }
                 ui.show("It's okay, you can try again~!");
             }
-        }
-    }*/
+        }*/
+    }
 }
