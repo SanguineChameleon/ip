@@ -11,14 +11,14 @@ import haru.model.TaskList;
 /**
  * Command to delete a task.
  */
-public class DeleteTask extends Command {
+public class DeleteTaskCommand extends Command {
 
     /**
      * Constructs a DeleteTask command with required options.
      *
      * @param ctx command context for execution
      */
-    public DeleteTask(CommandContext ctx) {
+    public DeleteTaskCommand(CommandContext ctx) {
         super(new HashMap<>(Map.of("primary", "task number")), ctx);
     }
 
