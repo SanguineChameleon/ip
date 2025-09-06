@@ -65,6 +65,16 @@ public abstract class Task implements Serializable {
     }
 
     /**
+     * Returns true if this task has the specified tag.
+     *
+     * @param tag the tag to check
+     * @return true if the task contains the tag, false otherwise
+     */
+    public boolean hasTag(String tag) {
+        return this.tags.contains(tag);
+    }
+
+    /**
      * Returns the string representation of the task.
      *
      * @return the string representation
