@@ -105,8 +105,14 @@ public class Haru extends Application {
                 (obs, oldH, newH) -> AnchorPane.setBottomAnchor(c.getScroll(), newH.doubleValue())
         );
 
-        c.getSend().setOnAction(event -> handleInput(c.getInput().getText()));
-        c.getInput().setOnAction(event -> handleInput(c.getInput().getText()));
+        c.getSend().setOnAction(event -> {
+            handleInput(c.getInput().getText());
+            c.getInput().clear();
+        });
+        c.getInput().setOnAction(event -> {
+            handleInput(c.getInput().getText());
+            c.getInput().clear();
+        });
 
         Scene scene = new Scene(root, 400, 600);
         stage.setScene(scene);
