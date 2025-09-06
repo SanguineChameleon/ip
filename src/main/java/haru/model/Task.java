@@ -1,6 +1,7 @@
 package haru.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Base class for all tasks.
@@ -8,6 +9,7 @@ import java.io.Serializable;
 public abstract class Task implements Serializable {
     private final String name;
     private final TaskType type;
+    private final ArrayList<String> tags = new ArrayList<>();
     private boolean isDone = false;
 
     /**
@@ -54,14 +56,38 @@ public abstract class Task implements Serializable {
     }
 
     /**
+     * Adds a tag to this task.
+     *
+     * @param tag the tag to add
+     */
+    public void addTag(String tag) {
+        this.tags.add(tag);
+    }
+
+    /**
+     * Returns true if this task has the specified tag.
+     *
+     * @param tag the tag to check
+     * @return true if the task contains the tag, false otherwise
+     */
+    public boolean hasTag(String tag) {
+        return this.tags.contains(tag);
+    }
+
+    /**
      * Returns the string representation of the task.
      *
      * @return the string representation
      */
     @Override
     public String toString() {
-        return String.format("[%c][%c] %s",
+        StringBuilder sb = new StringBuilder(String.format("[%c][%c] %s",
                 this.type.getCode(), (this.isDone ? 'X' : ' '),
-                this.getDescription());
+                this.getDescription()));
+        if (!this.tags.isEmpty()) {
+            sb.append(String.format(" (tags: %s)",
+                    String.join(", ", this.tags)));
+        }
+        return sb.toString();
     }
 }
