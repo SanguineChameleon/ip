@@ -5,6 +5,7 @@ import java.util.stream.Stream;
 
 import haru.command.AddDeadlineCommand;
 import haru.command.AddEventCommand;
+import haru.command.AddTagCommand;
 import haru.command.AddToDoCommand;
 import haru.command.Command;
 import haru.command.CommandContext;
@@ -64,6 +65,7 @@ public class Haru extends Application {
         case "unmark" -> new UnmarkTaskCommand(ctx);
         case "delete" -> new DeleteTaskCommand(ctx);
         case "find" -> new FindTasksCommand(ctx);
+        case "tag" -> new AddTagCommand(ctx);
         default -> throw new UnknownCommandException();
         };
         // @formatter:on
