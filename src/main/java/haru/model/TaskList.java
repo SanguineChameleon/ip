@@ -171,6 +171,22 @@ public class TaskList implements Serializable {
     }
 
     /**
+     * Finds tasks that contain the given tag.
+     *
+     * @param tag the tag to search for
+     * @return a TaskList of matching tasks
+     */
+    public TaskList filter(String tag) {
+        ArrayList<Task> matches = new ArrayList<>();
+        for (Task task : this.tasks) {
+            if (task.hasTag(tag)) {
+                matches.add(task);
+            }
+        }
+        return TaskList.fromList(matches);
+    }
+
+    /**
      * Adds a tag to the task at the given index and writes to file.
      *
      * @param index the task index
