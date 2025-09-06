@@ -11,7 +11,7 @@ import haru.model.TaskTime;
 /**
  * Command to add an event task.
  */
-public class AddEventCommand extends AddTask {
+public class AddEventCommand extends AddTaskCommand {
 
     /**
      * Constructs an AddEventCommand with required options.

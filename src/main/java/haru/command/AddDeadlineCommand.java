@@ -11,7 +11,7 @@ import haru.model.TaskTime;
 /**
  * Command to add a deadline task.
  */
-public class AddDeadlineCommand extends AddTask {
+public class AddDeadlineCommand extends AddTaskCommand {
 
     /**
      * Constructs an AddDeadlineCommand with required options.

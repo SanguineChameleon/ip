@@ -10,7 +10,7 @@ import haru.model.ToDo;
 /**
  * Command to add a todo task.
  */
-public class AddToDo extends AddTask {
+public class AddToDo extends AddTaskCommand {
 
     /**
      * Constructs an AddToDo command with required options.

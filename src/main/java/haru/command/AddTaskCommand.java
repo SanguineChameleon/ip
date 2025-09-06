@@ -8,15 +8,15 @@ import haru.model.Task;
 /**
  * Base command for adding tasks.
  */
-public abstract class AddTask extends Command {
+public abstract class AddTaskCommand extends Command {
 
     /**
-     * Constructs an AddTask command with option aliases.
+     * Constructs an AddTaskCommand with option aliases.
      *
      * @param aliases map of option aliases
      * @param ctx     command context for execution
      */
-    public AddTask(HashMap<String, String> aliases, CommandContext ctx) {
+    public AddTaskCommand(HashMap<String, String> aliases, CommandContext ctx) {
         super(aliases, ctx);
     }
 
