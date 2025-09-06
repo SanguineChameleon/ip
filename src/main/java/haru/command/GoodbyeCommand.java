@@ -7,14 +7,14 @@ import javafx.application.Platform;
 /**
  * Command to exit the application.
  */
-public class Goodbye extends Command {
+public class GoodbyeCommand extends Command {
 
     /**
-     * Constructs a Goodbye command.
+     * Constructs a GoodbyeCommand.
      *
      * @param ctx command context for execution
      */
-    public Goodbye(CommandContext ctx) {
+    public GoodbyeCommand(CommandContext ctx) {
         super(new HashMap<>(), ctx);
     }
 

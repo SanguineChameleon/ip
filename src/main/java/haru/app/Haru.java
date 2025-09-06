@@ -10,7 +10,7 @@ import haru.command.Command;
 import haru.command.CommandContext;
 import haru.command.DeleteTaskCommand;
 import haru.command.FindTasksCommand;
-import haru.command.Goodbye;
+import haru.command.GoodbyeCommand;
 import haru.command.Hello;
 import haru.command.ListTasks;
 import haru.command.MarkTask;
@@ -53,7 +53,7 @@ public class Haru extends Application {
         // IntelliJ IDEA auto formatting doesn't work for switch expressions
         // @formatter:off
         Command command = switch (name) {
-        case "bye" -> new Goodbye(ctx);
+        case "bye" -> new GoodbyeCommand(ctx);
         case "todo" -> new AddToDoCommand(ctx);
         case "deadline" -> new AddDeadlineCommand(ctx);
         case "event" -> new AddEventCommand(ctx);
