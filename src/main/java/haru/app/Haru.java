@@ -3,18 +3,18 @@ package haru.app;
 import java.io.IOException;
 import java.util.stream.Stream;
 
-import haru.command.AddDeadline;
-import haru.command.AddEvent;
-import haru.command.AddToDo;
+import haru.command.AddDeadlineCommand;
+import haru.command.AddEventCommand;
+import haru.command.AddToDoCommand;
 import haru.command.Command;
 import haru.command.CommandContext;
-import haru.command.DeleteTask;
-import haru.command.FindTasks;
-import haru.command.Goodbye;
-import haru.command.Hello;
-import haru.command.ListTasks;
-import haru.command.MarkTask;
-import haru.command.UnmarkTask;
+import haru.command.DeleteTaskCommand;
+import haru.command.FindTasksCommand;
+import haru.command.GoodbyeCommand;
+import haru.command.HelloCommand;
+import haru.command.ListTasksCommand;
+import haru.command.MarkTaskCommand;
+import haru.command.UnmarkTaskCommand;
 import haru.exception.EmptyCommandException;
 import haru.exception.HaruException;
 import haru.exception.UnknownCommandException;
@@ -55,15 +55,15 @@ public class Haru extends Application {
         // IntelliJ IDEA auto formatting doesn't work for switch expressions
         // @formatter:off
         Command command = switch (name) {
-        case "bye" -> new Goodbye(ctx);
-        case "todo" -> new AddToDo(ctx);
-        case "deadline" -> new AddDeadline(ctx);
-        case "event" -> new AddEvent(ctx);
-        case "list" -> new ListTasks(ctx);
-        case "mark" -> new MarkTask(ctx);
-        case "unmark" -> new UnmarkTask(ctx);
-        case "delete" -> new DeleteTask(ctx);
-        case "find" -> new FindTasks(ctx);
+        case "bye" -> new GoodbyeCommand(ctx);
+        case "todo" -> new AddToDoCommand(ctx);
+        case "deadline" -> new AddDeadlineCommand(ctx);
+        case "event" -> new AddEventCommand(ctx);
+        case "list" -> new ListTasksCommand(ctx);
+        case "mark" -> new MarkTaskCommand(ctx);
+        case "unmark" -> new UnmarkTaskCommand(ctx);
+        case "delete" -> new DeleteTaskCommand(ctx);
+        case "find" -> new FindTasksCommand(ctx);
         default -> throw new UnknownCommandException();
         };
         // @formatter:on
@@ -146,6 +146,6 @@ public class Haru extends Application {
         }
         ui = new Ui(chat);
         ctx = new CommandContext(taskList, ui);
-        new Hello(ctx).execute();
+        new HelloCommand(ctx).execute();
     }
 }

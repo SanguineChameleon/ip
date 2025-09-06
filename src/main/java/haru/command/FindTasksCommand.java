@@ -8,14 +8,14 @@ import haru.exception.HaruException;
 /**
  * Command to find tasks matching a string.
  */
-public class FindTasks extends Command {
+public class FindTasksCommand extends Command {
 
     /**
-     * Constructs a FindTasks command with required options.
+     * Constructs a FindTasksCommand with required options.
      *
      * @param ctx command context for execution
      */
-    public FindTasks(CommandContext ctx) {
+    public FindTasksCommand(CommandContext ctx) {
         super(new HashMap<>(Map.of("primary", "search string")), ctx);
     }
 

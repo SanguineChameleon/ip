@@ -5,14 +5,14 @@ import java.util.HashMap;
 /**
  * Command to list all tasks.
  */
-public class ListTasks extends Command {
+public class ListTasksCommand extends Command {
 
     /**
-     * Constructs a ListTasks command.
+     * Constructs a ListTasksCommand.
      *
      * @param ctx command context for execution
      */
-    public ListTasks(CommandContext ctx) {
+    public ListTasksCommand(CommandContext ctx) {
         super(new HashMap<>(), ctx);
     }
 

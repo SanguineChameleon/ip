@@ -5,29 +5,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 import haru.exception.HaruException;
-import haru.model.Event;
+import haru.model.Deadline;
 import haru.model.TaskTime;
 
 /**
- * Command to add an event task.
+ * Command to add a deadline task.
  */
-public class AddEvent extends AddTask {
+public class AddDeadlineCommand extends AddTaskCommand {
 
     /**
-     * Constructs an AddEvent command with required options.
+     * Constructs an AddDeadlineCommand with required options.
      *
      * @param ctx command context for execution
      */
-    public AddEvent(CommandContext ctx) {
+    public AddDeadlineCommand(CommandContext ctx) {
         super(new HashMap<>(Map.of(
-                "primary", "event name",
-                "from", "start time",
-                "to", "end time"
+                "primary", "task name",
+                "by", "deadline"
         )), ctx);
     }
 
     /**
-     * Executes the command to add an event task.
+     * Executes the command to add a deadline task.
      *
      * @throws HaruException if task creation fails
      * @throws IOException   if IO error occurs
@@ -35,8 +34,7 @@ public class AddEvent extends AddTask {
     @Override
     public void execute() throws HaruException, IOException {
         String name = super.getRequiredOption("primary");
-        TaskTime from = super.getRequiredTime("from");
-        TaskTime to = super.getRequiredTime("to");
-        add(new Event(name, from, to));
+        TaskTime by = super.getRequiredTime("by");
+        add(new Deadline(name, by));
     }
 }
