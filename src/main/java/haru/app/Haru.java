@@ -9,7 +9,7 @@ import haru.command.AddToDoCommand;
 import haru.command.Command;
 import haru.command.CommandContext;
 import haru.command.DeleteTaskCommand;
-import haru.command.FindTasks;
+import haru.command.FindTasksCommand;
 import haru.command.Goodbye;
 import haru.command.Hello;
 import haru.command.ListTasks;
@@ -61,7 +61,7 @@ public class Haru extends Application {
         case "mark" -> new MarkTask(ctx);
         case "unmark" -> new UnmarkTask(ctx);
         case "delete" -> new DeleteTaskCommand(ctx);
-        case "find" -> new FindTasks(ctx);
+        case "find" -> new FindTasksCommand(ctx);
         default -> throw new UnknownCommandException();
         };
         // @formatter:on
