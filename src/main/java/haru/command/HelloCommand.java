@@ -5,14 +5,14 @@ import java.util.HashMap;
 /**
  * Command to greet the user.
  */
-public class Hello extends Command {
+public class HelloCommand extends Command {
 
     /**
-     * Constructs a Hello command.
+     * Constructs a HelloCommand.
      *
      * @param ctx command context for execution
      */
-    public Hello(CommandContext ctx) {
+    public HelloCommand(CommandContext ctx) {
         super(new HashMap<>(), ctx);
     }
 

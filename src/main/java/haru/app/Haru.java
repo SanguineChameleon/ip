@@ -11,7 +11,7 @@ import haru.command.CommandContext;
 import haru.command.DeleteTaskCommand;
 import haru.command.FindTasksCommand;
 import haru.command.GoodbyeCommand;
-import haru.command.Hello;
+import haru.command.HelloCommand;
 import haru.command.ListTasks;
 import haru.command.MarkTask;
 import haru.command.UnmarkTask;
@@ -130,6 +130,6 @@ public class Haru extends Application {
         }
         ui = new Ui(chat);
         ctx = new CommandContext(taskList, ui);
-        new Hello(ctx).execute();
+        new HelloCommand(ctx).execute();
     }
 }
