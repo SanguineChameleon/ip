@@ -11,14 +11,14 @@ import haru.model.TaskList;
 /**
  * Command to unmark a task as not done.
  */
-public class UnmarkTask extends Command {
+public class UnmarkTaskCommand extends Command {
 
     /**
-     * Constructs an UnmarkTask command with required options.
+     * Constructs an UnmarkTaskCommand with required options.
      *
      * @param ctx command context for execution
      */
-    public UnmarkTask(CommandContext ctx) {
+    public UnmarkTaskCommand(CommandContext ctx) {
         super(new HashMap<>(Map.of("primary", "task number")), ctx);
     }
 

@@ -14,7 +14,7 @@ import haru.command.GoodbyeCommand;
 import haru.command.HelloCommand;
 import haru.command.ListTasksCommand;
 import haru.command.MarkTaskCommand;
-import haru.command.UnmarkTask;
+import haru.command.UnmarkTaskCommand;
 import haru.exception.EmptyCommandException;
 import haru.exception.HaruException;
 import haru.exception.UnknownCommandException;
@@ -59,7 +59,7 @@ public class Haru extends Application {
         case "event" -> new AddEventCommand(ctx);
         case "list" -> new ListTasksCommand(ctx);
         case "mark" -> new MarkTaskCommand(ctx);
-        case "unmark" -> new UnmarkTask(ctx);
+        case "unmark" -> new UnmarkTaskCommand(ctx);
         case "delete" -> new DeleteTaskCommand(ctx);
         case "find" -> new FindTasksCommand(ctx);
         default -> throw new UnknownCommandException();
