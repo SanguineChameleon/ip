@@ -171,6 +171,21 @@ public class TaskList implements Serializable {
     }
 
     /**
+     * Adds a tag to the task at the given index and writes to file.
+     *
+     * @param index the task index
+     * @param tag   the tag to add
+     * @return the updated task
+     * @throws IOException if file write fails
+     */
+    public Task addTag(int index, String tag) throws IOException {
+        Task task = this.tasks.get(index);
+        task.addTag(tag);
+        this.writeToFile();
+        return task;
+    }
+
+    /**
      * Returns the string representation of the task list.
      *
      * @return the string representation
