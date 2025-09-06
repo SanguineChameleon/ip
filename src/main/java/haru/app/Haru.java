@@ -3,7 +3,7 @@ package haru.app;
 import java.io.IOException;
 import java.util.stream.Stream;
 
-import haru.command.AddDeadline;
+import haru.command.AddDeadlineCommand;
 import haru.command.AddEvent;
 import haru.command.AddToDo;
 import haru.command.Command;
@@ -55,7 +55,7 @@ public class Haru extends Application {
         Command command = switch (name) {
         case "bye" -> new Goodbye(ctx);
         case "todo" -> new AddToDo(ctx);
-        case "deadline" -> new AddDeadline(ctx);
+        case "deadline" -> new AddDeadlineCommand(ctx);
         case "event" -> new AddEvent(ctx);
         case "list" -> new ListTasks(ctx);
         case "mark" -> new MarkTask(ctx);

@@ -11,14 +11,14 @@ import haru.model.TaskTime;
 /**
  * Command to add a deadline task.
  */
-public class AddDeadline extends AddTask {
+public class AddDeadlineCommand extends AddTask {
 
     /**
-     * Constructs an AddDeadline command with required options.
+     * Constructs an AddDeadlineCommand with required options.
      *
      * @param ctx command context for execution
      */
-    public AddDeadline(CommandContext ctx) {
+    public AddDeadlineCommand(CommandContext ctx) {
         super(new HashMap<>(Map.of(
                 "primary", "task name",
                 "by", "deadline"
