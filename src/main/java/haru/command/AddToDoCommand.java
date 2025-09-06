@@ -10,14 +10,14 @@ import haru.model.ToDo;
 /**
  * Command to add a todo task.
  */
-public class AddToDo extends AddTaskCommand {
+public class AddToDoCommand extends AddTaskCommand {
 
     /**
-     * Constructs an AddToDo command with required options.
+     * Constructs an AddToDoCommand with required options.
      *
      * @param ctx command context for execution
      */
-    public AddToDo(CommandContext ctx) {
+    public AddToDoCommand(CommandContext ctx) {
         super(new HashMap<>(Map.of("primary", "task name")), ctx);
     }
 

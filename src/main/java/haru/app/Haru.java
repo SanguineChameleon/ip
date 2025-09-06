@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 import haru.command.AddDeadlineCommand;
 import haru.command.AddEventCommand;
-import haru.command.AddToDo;
+import haru.command.AddToDoCommand;
 import haru.command.Command;
 import haru.command.CommandContext;
 import haru.command.DeleteTask;
@@ -54,7 +54,7 @@ public class Haru extends Application {
         // @formatter:off
         Command command = switch (name) {
         case "bye" -> new Goodbye(ctx);
-        case "todo" -> new AddToDo(ctx);
+        case "todo" -> new AddToDoCommand(ctx);
         case "deadline" -> new AddDeadlineCommand(ctx);
         case "event" -> new AddEventCommand(ctx);
         case "list" -> new ListTasks(ctx);
