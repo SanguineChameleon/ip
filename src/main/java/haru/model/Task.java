@@ -56,6 +56,15 @@ public abstract class Task implements Serializable {
     }
 
     /**
+     * Adds a tag to this task.
+     *
+     * @param tag the tag to add
+     */
+    public void addTag(String tag) {
+        this.tags.add(tag);
+    }
+
+    /**
      * Returns the string representation of the task.
      *
      * @return the string representation
