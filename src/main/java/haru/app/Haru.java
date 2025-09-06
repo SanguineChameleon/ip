@@ -43,6 +43,8 @@ public class Haru extends Application {
      * @throws IOException   if IO error occurs
      */
     private void runCommand(String str) throws HaruException, IOException {
+        assert str != null : "input cannot be null";
+        assert ctx != null : "CommandContext must be initialized";
         String[] tokens = Stream.of(str.split(" "))
                 .filter(t -> !t.isEmpty())
                 .toArray(String[]::new);
@@ -70,9 +72,12 @@ public class Haru extends Application {
     }
 
     private void setStage(Stage stage) {
+        assert javafx.application.Platform.isFxApplicationThread() : "Must be on FX thread";
+        assert stage != null : "stage is required";
         javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(
                 getClass().getResource("/view/main.fxml")
         );
+        assert loader.getLocation() != null : "/view/main.fxml not found on classpath";
         AnchorPane root;
         try {
             root = loader.load();
@@ -81,8 +86,14 @@ public class Haru extends Application {
         }
 
         haru.ui.UiController c = loader.getController();
+        assert c != null : "UiController not wired in FXML";
 
         this.chat = c.getChat();
+        assert this.chat != null : "chat VBox missing";
+        assert c.getScroll() != null : "ScrollPane missing";
+        assert c.getBottom() != null : "bottom pane missing";
+        assert c.getSend() != null : "send button missing";
+        assert c.getInput() != null : "input field missing";
         this.chat.setFillWidth(true);
         c.getScroll().setFitToWidth(true);
 
@@ -105,6 +116,8 @@ public class Haru extends Application {
     }
 
     private void handleInput(String str) {
+        assert ui != null : "Ui must be initialized";
+        assert str != null : "input cannot be null";
         ui.showUserMessage(str);
         try {
             runCommand(str);
@@ -120,7 +133,10 @@ public class Haru extends Application {
 
     @Override
     public void start(Stage stage) {
+        assert javafx.application.Platform.isFxApplicationThread() : "start() must be on FX thread";
+        assert stage != null : "stage is required";
         this.setStage(stage);
+        assert chat != null : "chat must be set by setStage()";
 
         TaskList taskList;
         try {
