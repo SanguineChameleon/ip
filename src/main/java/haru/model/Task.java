@@ -1,6 +1,7 @@
 package haru.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Base class for all tasks.
@@ -8,6 +9,7 @@ import java.io.Serializable;
 public abstract class Task implements Serializable {
     private final String name;
     private final TaskType type;
+    private final ArrayList<String> tags = new ArrayList<>();
     private boolean isDone = false;
 
     /**
