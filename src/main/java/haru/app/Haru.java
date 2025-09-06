@@ -13,7 +13,7 @@ import haru.command.FindTasksCommand;
 import haru.command.GoodbyeCommand;
 import haru.command.HelloCommand;
 import haru.command.ListTasksCommand;
-import haru.command.MarkTask;
+import haru.command.MarkTaskCommand;
 import haru.command.UnmarkTask;
 import haru.exception.EmptyCommandException;
 import haru.exception.HaruException;
@@ -58,7 +58,7 @@ public class Haru extends Application {
         case "deadline" -> new AddDeadlineCommand(ctx);
         case "event" -> new AddEventCommand(ctx);
         case "list" -> new ListTasksCommand(ctx);
-        case "mark" -> new MarkTask(ctx);
+        case "mark" -> new MarkTaskCommand(ctx);
         case "unmark" -> new UnmarkTask(ctx);
         case "delete" -> new DeleteTaskCommand(ctx);
         case "find" -> new FindTasksCommand(ctx);

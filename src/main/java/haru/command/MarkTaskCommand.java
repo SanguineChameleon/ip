@@ -11,14 +11,14 @@ import haru.model.TaskList;
 /**
  * Command to mark a task as done.
  */
-public class MarkTask extends Command {
+public class MarkTaskCommand extends Command {
 
     /**
-     * Constructs a MarkTask command with required options.
+     * Constructs a MarkTaskCommand with required options.
      *
      * @param ctx command context for execution
      */
-    public MarkTask(CommandContext ctx) {
+    public MarkTaskCommand(CommandContext ctx) {
         super(new HashMap<>(Map.of("primary", "task number")), ctx);
     }
 
