@@ -11,14 +11,14 @@ import haru.model.TaskTime;
 /**
  * Command to add an event task.
  */
-public class AddEvent extends AddTask {
+public class AddEventCommand extends AddTask {
 
     /**
-     * Constructs an AddEvent command with required options.
+     * Constructs an AddEventCommand with required options.
      *
      * @param ctx command context for execution
      */
-    public AddEvent(CommandContext ctx) {
+    public AddEventCommand(CommandContext ctx) {
         super(new HashMap<>(Map.of(
                 "primary", "event name",
                 "from", "start time",

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.stream.Stream;
 
 import haru.command.AddDeadlineCommand;
-import haru.command.AddEvent;
+import haru.command.AddEventCommand;
 import haru.command.AddToDo;
 import haru.command.Command;
 import haru.command.CommandContext;
@@ -56,7 +56,7 @@ public class Haru extends Application {
         case "bye" -> new Goodbye(ctx);
         case "todo" -> new AddToDo(ctx);
         case "deadline" -> new AddDeadlineCommand(ctx);
-        case "event" -> new AddEvent(ctx);
+        case "event" -> new AddEventCommand(ctx);
         case "list" -> new ListTasks(ctx);
         case "mark" -> new MarkTask(ctx);
         case "unmark" -> new UnmarkTask(ctx);
