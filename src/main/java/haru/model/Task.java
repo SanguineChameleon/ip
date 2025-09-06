@@ -71,8 +71,13 @@ public abstract class Task implements Serializable {
      */
     @Override
     public String toString() {
-        return String.format("[%c][%c] %s",
+        StringBuilder sb = new StringBuilder(String.format("[%c][%c] %s",
                 this.type.getCode(), (this.isDone ? 'X' : ' '),
-                this.getDescription());
+                this.getDescription()));
+        if (!this.tags.isEmpty()) {
+            sb.append(String.format(" (tags: %s)",
+                    String.join(", ", this.tags)));
+        }
+        return sb.toString();
     }
 }
