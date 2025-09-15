@@ -101,12 +101,12 @@ public class Haru extends Application {
         this.chat.setFillWidth(true);
         c.getScroll().setFitToWidth(true);
 
-        this.chat.heightProperty().addListener(
-                (o, oldH, newH) -> c.getScroll().setVvalue(1.0)
+        this.chat.heightProperty().addListener((
+                o, oldH, newH) -> c.getScroll().setVvalue(1.0)
         );
 
-        c.getBottom().heightProperty().addListener(
-                (obs, oldH, newH) -> AnchorPane.setBottomAnchor(c.getScroll(), newH.doubleValue())
+        c.getBottom().heightProperty().addListener((
+                o, oldH, newH) -> AnchorPane.setBottomAnchor(c.getScroll(), newH.doubleValue())
         );
 
         c.getSend().setOnAction(event -> {
